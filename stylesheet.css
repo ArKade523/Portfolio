@@ -81,19 +81,28 @@ body {
 		color: #e0e0e0;
 	}
 	
+	h2 {
+		color: #e0e0e0;
+		font-family: Roboto;
+	}
+	
 	p {
 		color: #e0e0e0;
+		font-family: Roboto;
 	}
+
 	.image1 {
 		width: 30%;
 		height: auto;
 	}
+
 	.image2 {
 		position: absolute;
 		top: 24.3%;
 		width: auto;
 		height: 66%;
 	}
+
 	.image3 {
 		position: relative;
 		top: 36%;
