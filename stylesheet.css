@@ -2,7 +2,7 @@
     font-family: "Roboto", sans-serif;
   }
 body {
-   background-color: #ffeeee;
+   background-color: #333;
 	width: 1000px;
 	height: 800px;
 }
@@ -10,7 +10,7 @@ body {
 .top-bar {
 	display: inline-flex;
 	position: fixed;
-	background-color: #fefefe;
+	background-color: #666;
 	width: 98.5%;
 	height: 50px;
 	align-items: center;
@@ -31,7 +31,6 @@ body {
 	left: 150px;
 	width: 6em;
 	text-align: center;
-	justify-content: flex-end;
 	font-weight: 700;
 }
 	
