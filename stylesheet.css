@@ -2,20 +2,22 @@
     font-family: "Roboto", sans-serif;
   }
 body {
-   background-color: #333;
+   background-color: #444;
 	width: 1000px;
 	height: 800px;
 }
   
 .top-bar {
-	display: inline-flex;
+	display: flex;
 	position: fixed;
 	background-color: #666;
 	width: 98.5%;
-	height: 50px;
+	height: 5%;
 	align-items: center;
 	font-weight: 300;
 	z-index: 2;
+	color: #e0e0e0;
+	//border: 1px solid red;
 }
 	
 #name {
@@ -31,11 +33,12 @@ body {
 	left: 150px;
 	width: 6em;
 	text-align: center;
+	justify-content: flex-end;
 	font-weight: 700;
 }
 	
 	.header:hover {
-		background-color: #f0f0f0;
+		background-color: #777;
 		border-bottom: 2px solid #f0d000;
 	}
 	
@@ -43,37 +46,38 @@ body {
 		width: 9em;
 }
 	
-	.body{
-		width: 800px;
-		height: 600px;
+	div.body{
+		width: 80%;
+		height: 75%;
 		//background-color: #fefefe;
 		position: relative;
-		top: 75px;
+		top: 9%;
 		left: 10%;
 	}
 	
 	.title {
 		width: 8em;
 		text-align: left;
+		color: #e0e0e0;
 	}
 	
 	p {
-		
+		color: #e0e0e0;
 	}
 	.image1 {
-		width: 250px;
+		width: 30%;
 		height: auto;
 	}
 	.image2 {
 		position: absolute;
-		top: 148px;
+		top: 24.3%;
 		width: auto;
-		height: 412px;
+		height: 66%;
 	}
 	.image3 {
 		position: relative;
-		top: 225px;
-		left: -254px;
-		width: 250px;
+		top: 36%;
+		left: -30.5%;
+		width: 30%;
 		height: auto;
 	}
