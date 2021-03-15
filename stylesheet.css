@@ -42,22 +42,22 @@ body {
 		border-bottom: 2px solid #f0d000;
 	}
 
-a.link {
+.link {
   text-decoration: none;
   color: #e0e0e0;
 }
 
-a.link:visited {
+.link:visited {
   text-decoration: none;
   color: #e0e0e0;
 }
 
-a.link:hover {
+.link:hover {
   text-decoration: none;
   color: #e0e0e0;
 }
 
-a.link:active {
+.link:active {
   text-decoration: none;
   color: #e0e0e0;
 }
