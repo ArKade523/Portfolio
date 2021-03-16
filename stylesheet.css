@@ -6,7 +6,7 @@ body {
 
 .top-bar {
   position: fixed;
-  height: 3.3%;
+  height: 30px;
   width: 98%;
   background-color: #666;
   top: 1;
