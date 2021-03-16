@@ -65,6 +65,8 @@ div.body h2 {
 }
 
 .portrait {
+  height: 30%;
+  width: auto;
   position: relative;
   margin: 18px;
   top: 2px;
