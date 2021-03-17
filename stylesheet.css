@@ -50,9 +50,10 @@ div.body p.aboutme, h2.aboutme {
   padding: 1% 5%;
 }
 
-div.body p, h3, h1 {
+div.body p, h1, h3 {
   position: relative;
-  top: 15%;
+  top: 50px;
+  left: 20px;
   font-family: "Roboto", sans-serif;
   color: #e0e0e0;
 }
