@@ -1,6 +1,6 @@
-* {
+ * {
   overflow: hidden;
-}
+} 
 
 body {
   background-color: #444;
@@ -46,6 +46,10 @@ body {
   font-size: 25px;
   float: left;
   font-weight: 100;
+}
+
+div.body {
+  height: 500px;
 }
 
 div.body p.aboutme, h2.aboutme {
