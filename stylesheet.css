@@ -50,6 +50,11 @@ div.body p.aboutme, h2.aboutme {
   padding: 1% 5%;
 }
 
+div.body p, h3, h1 {
+  font-family: "Roboto", sans-serif;
+  color: #e0e0e0;
+}
+
 div.body.aboutme {
   position: relative;
   display: grid;
