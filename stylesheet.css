@@ -51,6 +51,8 @@ div.body p.aboutme, h2.aboutme {
 }
 
 div.body p, h3, h1 {
+  position: relative;
+  top: 15%;
   font-family: "Roboto", sans-serif;
   color: #e0e0e0;
 }
