@@ -61,11 +61,13 @@ div.body.home {
 }
 
 .body .image1 {
+  margin: auto;
   height: auto;
   width: 600px;
 }
 
 .body .image2 {
+  margin: auto;
   height: auto;
   width: 800px;
   grid-row: 1/3;
@@ -73,6 +75,7 @@ div.body.home {
 }
 
 .body .image3 {
+  margin: auto;
   height: auto;
   width: 600px;
 }
