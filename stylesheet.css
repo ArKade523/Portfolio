@@ -57,7 +57,13 @@ div.body.home {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
-  grid-gap: 10px;
+  grid-gap: 10px; 
+  font-family: "Roboto";
+}
+
+.body .home {
+  top: 50px;
+  color: e0e0e0;
 }
 
 .body .image1 {
