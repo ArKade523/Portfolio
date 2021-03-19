@@ -71,6 +71,7 @@ div.body.home {
 p.body.home, h2.body.home {
   position: relative;
   top: 50px;
+  left: 10%;
   color: #e0e0e0;
   font-family: "Roboto";
 }
