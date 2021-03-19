@@ -104,6 +104,7 @@ div.body p, h1, h3 {
 div.body.aboutme {
   position: relative;
   display: grid;
+  justify-content: center;
   top: 40px;
   padding: 10px;
   grid-template-columns: 30% 70%;
