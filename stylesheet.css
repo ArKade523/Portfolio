@@ -54,17 +54,17 @@ div.body {
 div.body.home {
   position: relative;
   top: 42px;
-  left: 10%;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   grid-gap: 10px; 
-  font-family: "Roboto";
 }
 
-.body .home {
+p.body.home, h2.body.home {
+  position: relative;
   top: 50px;
   color: #e0e0e0;
+  font-family: "Roboto";
 }
 
 .body .image1 {
