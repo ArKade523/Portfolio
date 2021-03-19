@@ -40,6 +40,14 @@
   color: #e0e0e0;
 }
 
+#logo {
+  height: 30px;
+  width: auto;
+  float: left;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 #name {
   font-size: 25px;
   float: left;
