@@ -146,6 +146,7 @@ div.body p.aboutme {
   top: 8%;
   font-family: "Roboto";
   height: auto;
-  width: 500px;
-  left: 50%;
+  width: 800px;
+  left: 40%;
+  overflow: visible;
 }
