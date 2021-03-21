@@ -145,8 +145,8 @@ div.body p.aboutme {
   position: relative;
   top: 8%;
   font-family: "Roboto";
-  height: auto;
-  width: 800px;
-  left: 40%;
+  height: 1100px;
+  width: 850px;
+  left: 35%;
   overflow: visible;
 }
