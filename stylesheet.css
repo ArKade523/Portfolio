@@ -143,10 +143,11 @@ div.body p.aboutme {
 
 .body .workexperience {
   position: relative;
-  top: 8%;
+  top: 6%;
   font-family: "Roboto";
   //height: auto;
   //width: 850px;
   left: 30%;
   overflow: visible;
+  margin: 2%;
 }
