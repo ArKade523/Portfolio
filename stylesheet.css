@@ -151,3 +151,17 @@ div.body p.aboutme {
   overflow: visible;
   margin: 2%;
 }
+
+.game-title {
+ font-family: "Roboto", sans-serif;
+ color: #ddd;
+ display: flex;
+ justify-content: center;
+ margin: 30px auto;
+}
+
+canvas {
+ background-color: #eee;
+ display: block;
+ margin: 0 auto;
+}
