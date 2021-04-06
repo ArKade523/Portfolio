@@ -1,16 +1,20 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
-const intertia = 0.95;
+const inertia = 0.98;
 const jumpSpeed = 2;
 
 // Changing Global Variables
 let x = 4 * canvas.height / 5;
-let y = 4 * canvas.height / 5;
-let keys = [];
+let y = canvas.height - 75;
 let dx = 0;
 let dy = 0;
 let angle = 0;
 let cloudPos = [500 * Math.random() + 50, 10 * Math.random(), 5 * Math.random(), 8 * Math.random(), 500 * Math.random() + 50, 0.5 * Math.random() + 0.4, 0.5 * Math.random() + 0.4];
+let keys = {
+  left: false,
+  right: false,
+  up: false
+}
 
 // Function to draw a platform
 function drawPlatform (xcor, ycor, width) {
@@ -22,6 +26,9 @@ function drawPlatform (xcor, ycor, width) {
   drawCircle(xcor, ycor + height / 2, height / 2);
   drawCircle(xcor + width, ycor + height / 2, height / 2);
   ctx.closePath();
+    if (x >= xcor && x <= xcor + width && y <= ycor - 12 && y >= ycor - 15) {
+      dy = 0;
+    }
 }
 // draw background
 function drawBack () {
@@ -57,7 +64,53 @@ function drawLevel () {
   ctx.fillRect(0, canvas.height - 60, canvas.width, 60);
 
   drawPlatform(500, 350, 100);
+  drawPlatform(300, 250, 150);
 }
+
+function drawCharacter () {
+  drawCircle(x, y, 15);
+}
+
+function moveCharacter () {
+  if (keys.right && !keys.left) {
+    dx = 2;
+  }
+  if (keys.left && !keys.right) {
+    dx = -2;
+  }
+  if (keys.up && dy === 0) {
+    dy = -5;
+  }
+  x += dx;
+  y += dy;
+}
+
+function keydown(e) {
+        // 65 is the code for a
+        if(e.keyCode === 65) {
+            keys.left = true;
+        }
+        // 68 is the code for d
+        if(e.keyCode === 68) {
+            keys.right = true;
+        }
+        // 87 is the code for w
+        if (e.keyCode === 87) {
+          keys.up = true;
+        }
+    }
+
+function keyup(e) {
+        if(e.keyCode === 65) {
+            keys.left = false;
+        }
+        if(e.keyCode === 68) {
+            keys.right = false;
+        }
+        if (e.keyCode === 87) {
+          keys.up = false;
+        }
+    }
 
 // make a circle
 function drawCircle (xcor, ycor, radius) {
@@ -94,6 +147,17 @@ function draw() {
   }
   drawBack();
   drawLevel();
+  drawCharacter();
+  moveCharacter();
+    dx *= (inertia- 0.05);
+    dy *= inertia;
+    dy += 0.05;
+  if (y >= canvas.height - 75) {
+    dy = 0;
+  }
+
+  document.addEventListener("keydown", keydown);
+   document.addEventListener("keyup", keyup);
 }
 
 draw();
