@@ -46,7 +46,7 @@ let lives = 3;
 let dead = false;
 let pause = false;
 let splash = true;
-let level = 1;
+let level = 3;
 
 function startScreen() {
   ctx.fillStyle = '#444';
@@ -90,6 +90,23 @@ function drawPlatform(xcor, ycor, width) {
     y = ycor - 15;
   }
 }
+
+function drawBouncingPlatform(xcor, ycor, width) {
+  let height = 10;
+  xcor += height / 2;
+  xcor += screenX;
+  ctx.beginPath();
+  ctx.fillStyle = '#963';
+  ctx.fillRect(xcor, ycor, width, height);
+  drawCircle(xcor, ycor + height / 2, height / 2);
+  drawCircle(xcor + width, ycor + height / 2, height / 2);
+  ctx.closePath();
+  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 5 && y >= ycor - 15 && dy >= 0) {
+    dy = -13;
+    y = ycor - 15;
+  }
+}
+
 
 function drawFloor(xcor, width) {
   let height = 60;
@@ -143,69 +160,96 @@ function drawBack() {
 
 function drawLevel() {
   if (level === 1) {
-    drawFloor(0, 700);
-    drawFloor(950, 500);
-    drawFloor(2050, 500);
+    levelOne();
+  }
 
-    drawPlatform(785, 550, 80);
-    drawPlatform(1485, 550, 80);
-    drawPlatform(1685, 500, 80);
-    drawPlatform(1885, 550, 80);
-    drawPlatform(2585, 550, 80);
-    drawPlatform(2785, 475, 80);
-    drawPlatform(2585, 375, 80);
-    drawPlatform(2785, 300, 80);
-
-    ctx.fillStyle = '#ddd';
-    ctx.fillRect(screenX + 3600, 100, 20, canvas.height);
-    ctx.fillStyle = '#999';
-    drawCircle(screenX + 3610, 95, 12);
-    ctx.fillStyle = '#fff';
-    ctx.beginPath();
-    ctx.moveTo(screenX + 3600, 110);
-    ctx.lineTo(screenX + 3550, 135);
-    ctx.lineTo(screenX + 3600, 160);
-    ctx.fill();
-    drawFloor(3200, 500);
+  if (level === 2) {
+    levelTwo();
   }
   
-  if (level === 2 || level === 3) {
-//     secret house
-    ctx.fillStyle = '#fec'
-    ctx.fillRect(screenX - 300, canvas.height - 210, 200, 150);
-    ctx.fillStyle = '#655';
-    ctx.beginPath();
-    ctx.moveTo(screenX - 325, canvas.height - 210);
-    ctx.lineTo(screenX - 200, canvas.height - 280);
-    ctx.lineTo(screenX - 75, canvas.height - 210);
-    ctx.fill();
-    ctx.fillStyle = '#222'
-    ctx.fillRect(screenX - 240, canvas.height - 160, 80, 100);
-    drawFloor(-500, 1200);
-    drawFloor(1700, 250);
-    drawFloor(2450, 550);
-
-    drawPlatform(800, 550, 80);
-    drawPlatform(1050, 480, 100);
-    drawPlatform(1400, 550, 80);
-    drawPlatform(2050, 550, 80);
-    drawPlatform(2050, 450, 80);
-    drawPlatform(2050, 350, 80);
-    drawPlatform(2050, 250, 80);
-    drawPlatform(3100, 550, 20);
-
-    ctx.fillStyle = '#ddd';
-    ctx.fillRect(screenX + 3700, 100, 20, canvas.height);
-    ctx.fillStyle = '#999';
-    drawCircle(screenX + 3710, 95, 12);
-    ctx.fillStyle = '#fff';
-    ctx.beginPath();
-    ctx.moveTo(screenX + 3700, 110);
-    ctx.lineTo(screenX + 3650, 135);
-    ctx.lineTo(screenX + 3700, 160);
-    ctx.fill();
-    drawFloor(3300, 500);
+  if (level === 3 || level === 4) {
+  	drawHouse(-300);
+    levelThree();
   }
+}
+
+function levelOne() {
+  drawFloor(0, 700);
+  drawFloor(950, 500);
+  drawFloor(2050, 500);
+
+  drawPlatform(785, 550, 80);
+  drawPlatform(1485, 550, 80);
+  drawPlatform(1685, 500, 80);
+  drawPlatform(1885, 550, 80);
+  drawPlatform(2585, 550, 80);
+  drawPlatform(2785, 475, 80);
+  drawPlatform(2585, 375, 80);
+  drawPlatform(2785, 300, 80);
+
+  drawFlag(3600);
+  drawFloor(3200, 500);
+  
+  if (x > screenX + 3600) {
+    win();
+    level = 2;
+  }
+}
+
+function levelTwo() {
+  drawFloor(0, 700);
+  drawFloor(1725, 225);
+  drawFloor(2500, 450);
+
+  drawPlatform(800, 550, 80);
+  drawPlatform(1050, 480, 100);
+  drawPlatform(1400, 550, 80);
+  drawPlatform(2050, 550, 80);
+  drawPlatform(2050, 450, 80);
+  drawPlatform(2050, 350, 80);
+  drawPlatform(2050, 250, 80);
+  drawPlatform(3100, 550, 20);
+
+  drawFlag(3700);
+  drawFloor(3300, 500);
+  
+  if (x > screenX + 3600) {
+    win();
+    level = 3;
+  }
+}
+
+function levelThree () {
+	drawFloor(-500, 1200);
+  drawFloor(1700, 600);
+  
+  drawPlatform(800, 550, 60);
+  drawPlatform(1000, 650, 60);
+  drawPlatform(1250, 650, 60);
+  drawPlatform(1450, 550, 60);
+  drawBouncingPlatform(2400, 550, 80);
+  drawBouncingPlatform(2700, 550, 80);
+  
+  drawFlag(3600);
+  drawFloor(3100, 700);
+  
+  if (x >= screenX + 3600) {
+  	win();
+    level = 4;
+  }
+}
+
+function drawFlag(xcor) {
+	ctx.fillStyle = '#ddd';
+  ctx.fillRect(screenX + xcor, 200, 20, canvas.height);
+  ctx.fillStyle = '#999';
+  drawCircle(screenX + xcor + 10, 195, 12);
+  ctx.fillStyle = '#fff';
+  ctx.beginPath();
+  ctx.moveTo(screenX + xcor, 210);
+  ctx.lineTo(screenX + xcor - 50, 235);
+  ctx.lineTo(screenX + xcor, 260);
+  ctx.fill();
 }
 
 function drawCharacter() {
@@ -217,13 +261,13 @@ function moveCharacter() {
   if (keys.right && !keys.left) {
     dx = 1.5;
     while (dx <= 5) {
-      dx *= (inertia + 0.04);    
+      dx *= (inertia + 0.04);
     }
   }
   if (keys.left && !keys.right) {
     dx = -1.5;
     while (dx >= -5) {
-      dx *= (inertia + 0.04);    
+      dx *= (inertia + 0.04);
     }
   }
   if (keys.up && dy === 0) {
@@ -292,6 +336,19 @@ function drawCloud(xcor, ycor) {
   drawCircle(xcor + 20 + cloudPos[1], ycor, 25 + cloudPos[2]);
   drawCircle(xcor + 60 + cloudPos[1], ycor - 2, 25 + cloudPos[3]);
   ctx.closePath();
+}
+
+function drawHouse(xcor) {
+  ctx.fillStyle = '#fec'
+  ctx.fillRect(screenX + xcor, canvas.height - 210, 200, 150);
+  ctx.fillStyle = '#655';
+  ctx.beginPath();
+  ctx.moveTo(screenX + xcor - 25, canvas.height - 210);
+  ctx.lineTo(screenX + xcor + 100, canvas.height - 280);
+  ctx.lineTo(screenX + xcor + 225, canvas.height - 210);
+  ctx.fill();
+  ctx.fillStyle = '#222'
+  ctx.fillRect(screenX + xcor + 60, canvas.height - 160, 80, 100);
 }
 
 function lifeLost() {
@@ -400,14 +457,6 @@ function draw() {
   }
   if (lives <= 0) {
     died();
-  }
-  if (x > screenX + 3600 && level === 1) {
-    win();
-    level = 2;
-  }
-  if (x > screenX + 3700 && level === 2) {
-    win();
-    level = 3;
   }
   if (splash) {
     startScreen();
