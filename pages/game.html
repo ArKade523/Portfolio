@@ -85,7 +85,7 @@ function drawPlatform(xcor, ycor, width) {
   drawCircle(xcor, ycor + height / 2, height / 2);
   drawCircle(xcor + width, ycor + height / 2, height / 2);
   ctx.closePath();
-  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 8 && y >= ycor - 15 && dy >= 0) {
+  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 5 && y >= ycor - 15 && dy >= 0) {
     dy = 0;
     y = ycor - 15;
   }
