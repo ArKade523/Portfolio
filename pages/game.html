@@ -167,9 +167,6 @@ function drawLevel() {
     ctx.lineTo(screenX + 3600, 160);
     ctx.fill();
     drawFloor(3200, 500);
-    if (x >= 3600 + startX) {
-      level++;
-    }
   }
   
   if (level === 2) {
@@ -197,9 +194,6 @@ function drawLevel() {
     ctx.lineTo(screenX + 3600, 160);
     ctx.fill();
     drawFloor(3300, 400);
-    if (x >= 3600 + startX) {
-      level++;
-    }
   }
   if (level === 3) {
     level = 1;
@@ -387,9 +381,13 @@ function draw() {
   if (lives <= 0) {
     died();
   }
-  if (x > screenX + 3600) {
+  if (x > screenX + 3600 && level === 1) {
     win();
-    level++;
+    level = 2;
+  }
+  if (x > screenX + 3600 && level === 2) {
+    win();
+    level = 1;
   }
   if (splash) {
     startScreen();
