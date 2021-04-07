@@ -206,13 +206,13 @@ function moveCharacter() {
   if (keys.right && !keys.left) {
     dx = 1.5;
     while (dx <= 5) {
-      dx *= (inertia + 0.05);    
+      dx *= (inertia + 0.04);    
     }
   }
   if (keys.left && !keys.right) {
     dx = -1.5;
     while (dx >= -5) {
-      dx *= (inertia + 0.05);    
+      dx *= (inertia + 0.04);    
     }
   }
   if (keys.up && dy === 0) {
