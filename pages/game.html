@@ -184,16 +184,16 @@ function drawLevel() {
     drawPlatform(3100, 550, 20);
 
     ctx.fillStyle = '#ddd';
-    ctx.fillRect(screenX + 3600, 100, 20, canvas.height);
+    ctx.fillRect(screenX + 3700, 100, 20, canvas.height);
     ctx.fillStyle = '#999';
-    drawCircle(screenX + 3610, 95, 12);
+    drawCircle(screenX + 3710, 95, 12);
     ctx.fillStyle = '#fff';
     ctx.beginPath();
-    ctx.moveTo(screenX + 3600, 110);
-    ctx.lineTo(screenX + 3550, 135);
-    ctx.lineTo(screenX + 3600, 160);
+    ctx.moveTo(screenX + 3700, 110);
+    ctx.lineTo(screenX + 3650, 135);
+    ctx.lineTo(screenX + 3700, 160);
     ctx.fill();
-    drawFloor(3300, 400);
+    drawFloor(3300, 500);
   }
 }
 
@@ -384,7 +384,7 @@ function draw() {
     win();
     level = 2;
   }
-  if (x > screenX + 3600 && level === 2) {
+  if (x > screenX + 3700 && level === 2) {
     win();
     level = 3;
   }
