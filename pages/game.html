@@ -390,6 +390,9 @@ function draw() {
     if (screenX >= 0 && level !== 3) {
       screenX = 0;
     }
+    if (screenX >= 500) {
+      screenX = 500;
+    }
 
     if (y >= canvas.height) {
       lifeLost();
