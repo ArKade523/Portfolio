@@ -124,12 +124,12 @@ function drawBack() {
 
   // hills
   ctx.fillStyle = '#082';
-  drawCircle(screenX + 300, 450, 100);
+  drawCircle(screenX + 300, 650, 100);
   ctx.beginPath();
-  ctx.moveTo(screenX + 150, 450);
-  ctx.lineTo(screenX + 229, 380);
-  ctx.lineTo(screenX + 372, 380);
-  ctx.lineTo(screenX + 450, 450);
+  ctx.moveTo(screenX + 150, 650);
+  ctx.lineTo(screenX + 229, 580);
+  ctx.lineTo(screenX + 372, 580);
+  ctx.lineTo(screenX + 450, 650);
   ctx.fill();
 
   ctx.fillStyle = '#666';
@@ -144,14 +144,14 @@ function drawLevel() {
   drawFloor(950, 500);
   drawFloor(2050, 500);
 
-  drawPlatform(785, 350, 80);
-  drawPlatform(1485, 350, 80);
-  drawPlatform(1685, 300, 80);
-  drawPlatform(1885, 350, 80);
-  drawPlatform(2585, 350, 80);
-  drawPlatform(2785, 275, 80);
-  drawPlatform(2585, 175, 80);
-  drawPlatform(2785, 100, 80);
+  drawPlatform(785, 550, 80);
+  drawPlatform(1485, 550, 80);
+  drawPlatform(1685, 500, 80);
+  drawPlatform(1885, 550, 80);
+  drawPlatform(2585, 550, 80);
+  drawPlatform(2785, 475, 80);
+  drawPlatform(2585, 375, 80);
+  drawPlatform(2785, 300, 80);
 
   ctx.fillStyle = '#ddd';
   ctx.fillRect(screenX + 3600, 100, 20, 500);
