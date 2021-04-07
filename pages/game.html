@@ -30,7 +30,7 @@ var ctx = canvas.getContext('2d');
 var inertia = 0.98;
 
 // Changing Global Variables
-var x = 4 * canvas.height / 5;
+var x = canvas.width / 5;
 var y = canvas.height - 75;
 var dx = 0;
 var dy = 0;
@@ -357,8 +357,8 @@ function draw() {
     dy *= (inertia);
     dy += 0.2;
 
-    if (x >= 600) {
-      x = 600;
+    if (x >= 500) {
+      x = 500;
       screenX -= dx;
     }
 
