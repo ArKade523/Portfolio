@@ -169,7 +169,7 @@ function drawLevel() {
     drawFloor(3200, 500);
   }
   
-  if (level === 2) {
+  if (level === 2 || level === 3) {
   	drawFloor(0, 700);
     drawFloor(1700, 250);
     drawFloor(2450, 550);
@@ -194,9 +194,6 @@ function drawLevel() {
     ctx.lineTo(screenX + 3600, 160);
     ctx.fill();
     drawFloor(3300, 400);
-  }
-  if (level === 3) {
-    level = 1;
   }
 }
 
