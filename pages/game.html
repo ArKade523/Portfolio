@@ -204,10 +204,10 @@ function drawCharacter() {
 
 function moveCharacter() {
   if (keys.right && !keys.left) {
-    dx = 4;
+    dx = 4.5;
   }
   if (keys.left && !keys.right) {
-    dx = -4;
+    dx = -4.5;
   }
   if (keys.up && dy === 0) {
     dy = -10;
@@ -358,7 +358,7 @@ function draw() {
     moveCharacter();
     dx *= (inertia - 0.15);
     dy *= (inertia);
-    dy += 0.25;
+    dy += 0.3;
 
     if (x >= 500) {
       x = 500;
