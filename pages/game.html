@@ -172,15 +172,15 @@ function drawLevel() {
   if (level === 2 || level === 3) {
 //     secret house
     ctx.fillStyle = '#fec'
-    ctx.fillRect(screenX - 300, canvas.height - 260, 200, 200);
+    ctx.fillRect(screenX - 300, canvas.height - 210, 200, 150);
     ctx.fillStyle = '#655';
     ctx.beginPath();
-    ctx.moveTo(screenX - 325, canvas.height - 260);
-    ctx.lineTo(screenX - 200, canvas.height - 350);
-    ctx.lineTo(screenX - 75, canvas.height - 260);
+    ctx.moveTo(screenX - 325, canvas.height - 210);
+    ctx.lineTo(screenX - 200, canvas.height - 280);
+    ctx.lineTo(screenX - 75, canvas.height - 210);
     ctx.fill();
     ctx.fillStyle = '#222'
-    ctx.fillRect(screenX - 220, canvas.height - 160, 40, 100);
+    ctx.fillRect(screenX - 240, canvas.height - 160, 80, 100);
     drawFloor(-500, 1200);
     drawFloor(1700, 250);
     drawFloor(2450, 550);
