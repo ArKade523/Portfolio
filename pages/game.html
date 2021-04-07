@@ -204,10 +204,16 @@ function drawCharacter() {
 
 function moveCharacter() {
   if (keys.right && !keys.left) {
-    dx = 5;
+    dx = 3;
+    while (dx <= 5) {
+      dx *= (inertia + .5);    
+    }
   }
   if (keys.left && !keys.right) {
-    dx = -5;
+    dx = -3;
+    while (dx >= -5) {
+      dx *= (1 + inertia);    
+    }
   }
   if (keys.up && dy === 0) {
     dy = -10;
