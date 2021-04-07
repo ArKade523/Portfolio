@@ -332,8 +332,8 @@ function win() {
   ctx.fillStyle = '#eee';
   ctx.fillText('You Won!', canvas.width / 2 - 110, canvas.height / 2 + 20);
   ctx.font = '20px Roboto, sans-serif';
-  ctx.fillText('Press Enter to Continue', canvas.width / 2 - 100, canvas.height / 2 + 60);
-  dead = true;
+  ctx.fillText('Press Any Key to Continue', canvas.width / 2 - 105, canvas.height / 2 + 60);
+  pause = true;
   document.addEventListener("keydown", keydown);
 }
 
