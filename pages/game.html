@@ -194,6 +194,9 @@ function drawLevel() {
     ctx.fill();
     drawFloor(3300, 400);
   }
+  if (level === 3) {
+    level = 1;
+  }
 }
 
 function drawCharacter() {
@@ -332,12 +335,7 @@ function win() {
   ctx.fillText('Press Enter to Continue', canvas.width / 2 - 100, canvas.height / 2 + 60);
   dead = true;
   document.addEventListener("keydown", keydown);
-  if (level < 2) {
-  	level++;
-  }
-  else {
-  level = 1;
-  }
+  level++;
 }
 
 // Main draw function
