@@ -232,8 +232,11 @@ function keydown(e) {
 
   if (e.keyCode === 13) {
     restart();
-    dead = false;
     splash = true;
+    if (dead) {
+      dead = false;
+      lives = 3;
+    }
   }
 
   if (e.keyCode) {
