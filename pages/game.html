@@ -301,7 +301,7 @@ function lifeLost() {
   ctx.font = '20px Roboto, sans-serif';
   ctx.fillText('Press Any Key to Continue', canvas.width / 2 - 110, canvas.height / 2 + 60);
   pause = true;
-  document.addEventListener("keydown", keydown);
+  setTimeout(document.addEventListener("keydown", keydown), 500);
 }
 
 function died() {
@@ -321,7 +321,7 @@ function died() {
   ctx.fillText('Press Enter to Restart', canvas.width / 2 - 100, canvas.height / 2 + 60);
   dead = true;
   level = 1;
-  document.addEventListener("keydown", keydown);
+  setTimeout(document.addEventListener("keydown", keydown), 1000);
 }
 
 function win() {
@@ -340,7 +340,7 @@ function win() {
   ctx.font = '20px Roboto, sans-serif';
   ctx.fillText('Press Any Key to Continue', canvas.width / 2 - 105, canvas.height / 2 + 60);
   pause = true;
-  document.addEventListener("keydown", keydown);
+  setTimeout(document.addEventListener("keydown", keydown), 1000);
   restart();
 }
 
