@@ -45,6 +45,18 @@ var screenX = 0;
 var lives = 3;
 var dead = false;
 var pause = false;
+var splash = true;
+
+function startScreen () {
+	ctx.fillStyle = '#444';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#eee';
+  ctx.font = '75px Roboto, sans-serif';
+  ctx.fillText('Untitled Platformer', canvas.width / 2 - 300, canvas.height / 3);
+  ctx.font = '20px Roboto, sans-serif';
+  ctx.fillText("Use 'w' or the spacebar to jump, 'd' to go right, and 'a' to go left", canvas.width / 2 - 265, 2 * canvas.height / 3);
+  ctx.fillText("Press any key to start", canvas.width / 2 - 80, 2 * canvas.height / 3 + 50);
+}
 
 function restart() {
   x = 4 * canvas.height / 5;
@@ -72,8 +84,9 @@ function drawPlatform(xcor, ycor, width) {
   drawCircle(xcor, ycor + height / 2, height / 2);
   drawCircle(xcor + width, ycor + height / 2, height / 2);
   ctx.closePath();
-  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 11 && y >= ycor - 15 && dy >= 0) {
+  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 8 && y >= ycor - 15 && dy >= 0) {
     dy = 0;
+    y = ycor - 15;
   }
 }
 
@@ -85,8 +98,9 @@ function drawFloor(xcor, width) {
   ctx.fillStyle = '#093';
   ctx.fillRect(xcor, ycor, width, height);
   ctx.closePath();
-  if (x >= xcor && x <= xcor + width && y <= ycor - 11 && y >= ycor - 15 && dy >= 0) {
+  if (x >= xcor && x <= xcor + width && y <= ycor - 8 && y >= ycor - 15 && dy >= 0) {
     dy = 0;
+    y = ycor - 15;
   }
 }
 
@@ -141,8 +155,8 @@ function drawLevel() {
 
   ctx.fillStyle = '#ddd';
   ctx.fillRect(screenX + 3600, 100, 20, 500);
-  ctx.fillStyle = '#bbb';
-  drawCircle(screenX + 3610, 95, 15);
+  ctx.fillStyle = '#999';
+  drawCircle(screenX + 3610, 95, 12);
   ctx.fillStyle = '#fff';
   ctx.beginPath();
   ctx.moveTo(screenX + 3600, 110);
@@ -165,7 +179,7 @@ function moveCharacter() {
     dx = -4;
   }
   if (keys.up && dy === 0) {
-    dy = -6;
+    dy = -8;
   }
   x += dx;
   y += dy;
@@ -180,7 +194,7 @@ function keydown(e) {
   if (e.keyCode === 68) {
     keys.right = true;
   }
-  // 87 is the code for w and 32 is the code for the spacebad
+  // 87 is the code for w and 32 is the code for the spacebar
   if (e.keyCode === 87 || e.keyCode === 32) {
     keys.up = true;
   }
@@ -189,10 +203,12 @@ function keydown(e) {
     restart();
     lives = 3;
     dead = false;
+    splash = true;
   }
 
   if (e.keyCode) {
     pause = false;
+    splash = false;
   }
 }
 
@@ -242,7 +258,7 @@ function lifeLost() {
   ctx.fillRect(canvas.width / 2 - 200, canvas.height / 2 - 100, 400, 200);
   ctx.font = '50px Roboto, sans-serif';
   ctx.fillStyle = '#eee';
-  ctx.fillText('You lost a Life!', canvas.width / 2 - 160, canvas.height / 2 + 20);
+  ctx.fillText('You Died!', canvas.width / 2 - 110, canvas.height / 2 + 20);
   ctx.font = '20px Roboto, sans-serif';
   ctx.fillText('Press Any Key to Continue', canvas.width / 2 - 110, canvas.height / 2 + 60);
   pause = true;
@@ -261,7 +277,7 @@ function died() {
   ctx.fillRect(canvas.width / 2 - 200, canvas.height / 2 - 100, 400, 200);
   ctx.font = '50px Roboto, sans-serif';
   ctx.fillStyle = '#eee';
-  ctx.fillText('You Died!', canvas.width / 2 - 110, canvas.height / 2 + 20);
+  ctx.fillText('Game Over!', canvas.width / 2 - 130, canvas.height / 2 + 20);
   ctx.font = '20px Roboto, sans-serif';
   ctx.fillText('Press Enter to Restart', canvas.width / 2 - 100, canvas.height / 2 + 60);
   dead = true;
@@ -292,7 +308,7 @@ function win() {
 // Main draw function
 function draw() {
   window.requestAnimationFrame(draw);
-  if (!dead && !pause) {
+  if (!dead && !pause && !splash) {
     angle += 0.01;
     cloudPos[0] -= cloudPos[5];
     cloudPos[4] -= cloudPos[6];
@@ -307,9 +323,9 @@ function draw() {
     drawLevel();
     drawCharacter();
     moveCharacter();
-    dx *= inertia - 0.15;
-    dy *= inertia;
-    dy += 0.13;
+    dx *= (inertia - 0.15);
+    dy *= (inertia);
+    dy += 0.2;
 
     if (x >= 500) {
       x = 500;
@@ -335,12 +351,16 @@ function draw() {
   if (x > screenX + 3600) {
     win();
   }
+  if (splash) {
+  startScreen();
+  }
 
   document.addEventListener("keydown", keydown);
   document.addEventListener("keyup", keyup);
 }
 
 draw();
+
 
   </script>
 </body>
