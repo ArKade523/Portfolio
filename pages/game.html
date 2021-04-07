@@ -46,9 +46,10 @@ var lives = 3;
 var dead = false;
 var pause = false;
 var splash = true;
+var level = 2;
 
-function startScreen () {
-	ctx.fillStyle = '#444';
+function startScreen() {
+  ctx.fillStyle = '#444';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = '#eee';
   ctx.font = '75px Roboto, sans-serif';
@@ -98,7 +99,7 @@ function drawFloor(xcor, width) {
   ctx.fillStyle = '#093';
   ctx.fillRect(xcor, ycor, width, height);
   ctx.closePath();
-  if (x >= xcor && x <= xcor + width && y <= ycor - 8 && y >= ycor - 15 && dy >= 0) {
+  if (x >= xcor && x <= xcor + width && y <= ycor + 8 && y >= ycor - 15 && dy >= 0) {
     dy = 0;
     y = ycor - 15;
   }
@@ -140,30 +141,59 @@ function drawBack() {
 }
 
 function drawLevel() {
-  drawFloor(0, 700);
-  drawFloor(950, 500);
-  drawFloor(2050, 500);
+  if (level === 1) {
+    drawFloor(0, 700);
+    drawFloor(950, 500);
+    drawFloor(2050, 500);
 
-  drawPlatform(785, 550, 80);
-  drawPlatform(1485, 550, 80);
-  drawPlatform(1685, 500, 80);
-  drawPlatform(1885, 550, 80);
-  drawPlatform(2585, 550, 80);
-  drawPlatform(2785, 475, 80);
-  drawPlatform(2585, 375, 80);
-  drawPlatform(2785, 300, 80);
+    drawPlatform(785, 550, 80);
+    drawPlatform(1485, 550, 80);
+    drawPlatform(1685, 500, 80);
+    drawPlatform(1885, 550, 80);
+    drawPlatform(2585, 550, 80);
+    drawPlatform(2785, 475, 80);
+    drawPlatform(2585, 375, 80);
+    drawPlatform(2785, 300, 80);
 
-  ctx.fillStyle = '#ddd';
-  ctx.fillRect(screenX + 3600, 100, 20, canvas.height);
-  ctx.fillStyle = '#999';
-  drawCircle(screenX + 3610, 95, 12);
-  ctx.fillStyle = '#fff';
-  ctx.beginPath();
-  ctx.moveTo(screenX + 3600, 110);
-  ctx.lineTo(screenX + 3550, 135);
-  ctx.lineTo(screenX + 3600, 160);
-  ctx.fill();
-  drawFloor(3200, 500);
+    ctx.fillStyle = '#ddd';
+    ctx.fillRect(screenX + 3600, 100, 20, canvas.height);
+    ctx.fillStyle = '#999';
+    drawCircle(screenX + 3610, 95, 12);
+    ctx.fillStyle = '#fff';
+    ctx.beginPath();
+    ctx.moveTo(screenX + 3600, 110);
+    ctx.lineTo(screenX + 3550, 135);
+    ctx.lineTo(screenX + 3600, 160);
+    ctx.fill();
+    drawFloor(3200, 500);
+  }
+  
+  if (level === 2) {
+  	drawFloor(0, 700);
+    drawFloor(1700, 250);
+    drawFloor(2450, 550);
+
+    drawPlatform(800, 550, 80);
+    drawPlatform(1050, 480, 100);
+    drawPlatform(1400, 550, 80);
+    drawPlatform(2050, 550, 80);
+    drawPlatform(2050, 450, 80);
+    drawPlatform(2050, 350, 80);
+    drawPlatform(2050, 250, 80);
+    drawPlatform(3100, 550, 20);
+
+    ctx.fillStyle = '#ddd';
+    ctx.fillRect(screenX + 3600, 100, 20, canvas.height);
+    ctx.fillStyle = '#999';
+    drawCircle(screenX + 3610, 95, 12);
+    ctx.fillStyle = '#fff';
+    ctx.beginPath();
+    ctx.moveTo(screenX + 3600, 110);
+    ctx.lineTo(screenX + 3550, 135);
+    ctx.lineTo(screenX + 3600, 160);
+    ctx.fill();
+    drawFloor(3300, 400);
+  }
 }
 
 function drawCharacter() {
@@ -299,10 +329,15 @@ function win() {
   ctx.fillStyle = '#eee';
   ctx.fillText('You Won!', canvas.width / 2 - 110, canvas.height / 2 + 20);
   ctx.font = '20px Roboto, sans-serif';
-  ctx.fillText('Press Enter to Restart', canvas.width / 2 - 100, canvas.height / 2 + 60);
+  ctx.fillText('Press Enter to Continue', canvas.width / 2 - 100, canvas.height / 2 + 60);
   dead = true;
-
   document.addEventListener("keydown", keydown);
+  if (level < 2) {
+  	level++;
+  }
+  else {
+  level = 1;
+  }
 }
 
 // Main draw function
@@ -352,7 +387,7 @@ function draw() {
     win();
   }
   if (splash) {
-  startScreen();
+    startScreen();
   }
 
   document.addEventListener("keydown", keydown);
@@ -360,6 +395,7 @@ function draw() {
 }
 
 draw();
+
 
 
   </script>
