@@ -167,6 +167,9 @@ function drawLevel() {
     ctx.lineTo(screenX + 3600, 160);
     ctx.fill();
     drawFloor(3200, 500);
+    if (x >= 3600 + startX) {
+      level++;
+    }
   }
   
   if (level === 2) {
@@ -194,6 +197,9 @@ function drawLevel() {
     ctx.lineTo(screenX + 3600, 160);
     ctx.fill();
     drawFloor(3300, 400);
+    if (x >= 3600 + startX) {
+      level++;
+    }
   }
   if (level === 3) {
     level = 1;
