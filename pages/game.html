@@ -335,7 +335,6 @@ function win() {
   ctx.fillText('Press Enter to Continue', canvas.width / 2 - 100, canvas.height / 2 + 60);
   dead = true;
   document.addEventListener("keydown", keydown);
-  level++;
 }
 
 // Main draw function
@@ -383,6 +382,7 @@ function draw() {
   }
   if (x > screenX + 3600) {
     win();
+    level++;
   }
   if (splash) {
     startScreen();
