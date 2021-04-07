@@ -26,27 +26,27 @@
 	  'use strict';
 
 const canvas = document.getElementById('gameCanvas');
-var ctx = canvas.getContext('2d');
-var inertia = 0.98;
+const ctx = canvas.getContext('2d');
+const inertia = 0.98;
 
 // Changing Global Variables
-var x = canvas.width / 5;
-var y = canvas.height - 75;
-var dx = 0;
-var dy = 0;
-var angle = 0;
-var cloudPos = [500 * Math.random() + 50, 10 * Math.random(), 5 * Math.random(), 8 * Math.random(), 500 * Math.random() + 50, 0.5 * Math.random() + 0.4, 0.5 * Math.random() + 0.4];
-var keys = {
+let x = canvas.width / 5;
+let y = canvas.height - 75;
+let dx = 0;
+let dy = 0;
+let angle = 0;
+let cloudPos = [500 * Math.random() + 50, 10 * Math.random(), 5 * Math.random(), 8 * Math.random(), 500 * Math.random() + 50, 0.5 * Math.random() + 0.4, 0.5 * Math.random() + 0.4];
+let keys = {
   left: false,
   right: false,
   up: false
 };
-var screenX = 0;
-var lives = 3;
-var dead = false;
-var pause = false;
-var splash = true;
-var level = 1;
+let screenX = 0;
+let lives = 3;
+let dead = false;
+let pause = false;
+let splash = true;
+let level = 1;
 
 function startScreen() {
   ctx.fillStyle = '#444';
@@ -76,7 +76,7 @@ function restart() {
 
 // Function to draw a platform
 function drawPlatform(xcor, ycor, width) {
-  var height = 10;
+  let height = 10;
   xcor += height / 2;
   xcor += screenX;
   ctx.beginPath();
@@ -92,8 +92,8 @@ function drawPlatform(xcor, ycor, width) {
 }
 
 function drawFloor(xcor, width) {
-  var height = 60;
-  var ycor = canvas.height - 60;
+  let height = 60;
+  let ycor = canvas.height - 60;
   xcor += screenX;
   ctx.beginPath();
   ctx.fillStyle = '#093';
@@ -112,7 +112,7 @@ function drawBack() {
   //sun
   ctx.fillStyle = '#ffff00';
   drawCircle(70, 90, 28);
-  for (var i = 0; i < 8; i++) {
+  for (let i = 0; i < 8; i++) {
     ctx.beginPath();
     ctx.moveTo(70 + 35 * Math.cos(angle + i * Math.PI / 4 - 0.2), 90 + 35 * Math.sin(angle + i * Math.PI / 4 - 0.2));
     ctx.lineTo(70 + 65 * Math.cos(angle + i * Math.PI / 4), 90 + 65 * Math.sin(angle + i * Math.PI / 4));
@@ -170,7 +170,7 @@ function drawLevel() {
   }
   
   if (level === 2 || level === 3) {
-  	drawFloor(0, 700);
+    drawFloor(0, 700);
     drawFloor(1700, 250);
     drawFloor(2450, 550);
 
@@ -204,10 +204,10 @@ function drawCharacter() {
 
 function moveCharacter() {
   if (keys.right && !keys.left) {
-    dx = 4;
+    dx = 5;
   }
   if (keys.left && !keys.right) {
-    dx = -4;
+    dx = -5;
   }
   if (keys.up && dy === 0) {
     dy = -8;
@@ -356,7 +356,7 @@ function draw() {
     drawLevel();
     drawCharacter();
     moveCharacter();
-    dx *= (inertia - 0.15);
+    dx *= (inertia - 0.2);
     dy *= (inertia);
     dy += 0.2;
 
@@ -398,8 +398,5 @@ function draw() {
 }
 
 draw();
-
-
-
   </script>
 </body>
