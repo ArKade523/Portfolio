@@ -71,7 +71,7 @@ function drawBouncingPlatform(xcor, ycor, width) {
   xcor += height / 2;
   xcor += screenX;
   ctx.beginPath();
-  ctx.fillStyle = '#963';
+  ctx.fillStyle = '#f72';
   ctx.fillRect(xcor, ycor, width, height);
   drawCircle(xcor, ycor + height / 2, height / 2);
   drawCircle(xcor + width, ycor + height / 2, height / 2);
