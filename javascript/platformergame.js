@@ -21,7 +21,7 @@ let lives = 3;
 let dead = false;
 let pause = false;
 let splash = true;
-let level = 4;
+let level = 1;
 
 function startScreen() {
   ctx.fillStyle = '#444';
