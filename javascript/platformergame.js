@@ -369,6 +369,7 @@ function died() {
 
 function win() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawBack();
   ctx.fillStyle = '#eee';
   ctx.fillRect(canvas.width / 2 - 200, canvas.height / 2 - 125, 400, 250);
   ctx.fillRect(canvas.width / 2 - 225, canvas.height / 2 - 100, 450, 200);
