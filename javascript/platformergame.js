@@ -234,13 +234,13 @@ function drawCharacter() {
 
 function moveCharacter() {
   if (keys.right && !keys.left) {
-    dx = 1.5;
+    dx = 1;
     while (dx <= 5) {
       dx *= (inertia + 0.04);
     }
   }
   if (keys.left && !keys.right) {
-    dx = -1.5;
+    dx = -1;
     while (dx >= -5) {
       dx *= (inertia + 0.04);
     }
