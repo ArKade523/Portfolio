@@ -222,7 +222,7 @@ function levelFour () {
   drawFloor(0, 700);
   drawFloor(1700, 600);
   
-  drawPlatform(400 * Math.cos(angle) + 1150, 550, 100);
+  drawPlatform(400 * Math.cos(angle + Math.PI / 2) + 1150, 550, 100);
   drawBouncingPlatform(2400, 550, 80);
   drawBouncingPlatform(2600, 400, 80);
   drawBouncingPlatform(2800, 250, 80);
