@@ -142,9 +142,13 @@ function drawLevel() {
     levelTwo();
   }
   
-  if (level === 3 || level === 4) {
-  	drawHouse(-300);
+  if (level === 3) {
+    drawHouse(-300);
     levelThree();
+  }
+	
+  if (level === 4) {
+    levelFour();	  
   }
 }
 
@@ -211,6 +215,23 @@ function levelThree () {
   if (x >= screenX + 3600) {
   	win();
     level = 4;
+  }
+}
+
+function levelFour () {
+  drawFloor(0, 700);
+  drawFloor(1700, 600);
+  
+  drawPlatform(400 * Math.cos(angle) + 800, 550, 60);
+  drawBouncingPlatform(2400, 550, 80);
+  drawBouncingPlatform(2700, 550, 80);
+  
+  drawFlag(3600);
+  drawFloor(3100, 700);
+  
+  if (x >= screenX + 3600) {
+    win();
+    level = 5;
   }
 }
 
@@ -394,6 +415,9 @@ function draw() {
   window.requestAnimationFrame(draw);
   if (!dead && !pause && !splash) {
     angle += 0.01;
+    if (angle >= Math.PI * 2) {
+      angle = 0;
+    }
     cloudPos[0] -= cloudPos[5];
     cloudPos[4] -= cloudPos[6];
     if (cloudPos[0] < -150) {
