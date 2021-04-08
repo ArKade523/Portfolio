@@ -21,7 +21,7 @@ let lives = 3;
 let dead = false;
 let pause = false;
 let splash = true;
-let level = 1;
+let level = 5;
 
 function startScreen() {
   ctx.fillStyle = '#444';
@@ -244,11 +244,11 @@ function levelFive () {
   drawFloor(0, 700);
   drawFloor(1700, 600);
   
-  drawBouncingPlatform(200 * Math.cos(2 * (angle + Math.PI / 2)) + 950, 550, 100);
-  drawBouncingPlatform(-200 * Math.cos(2 * (angle + Math.PI / 2)) + 1350, 550, 100);
-  drawBouncingPlatform(20 * Math.cos(2 * (angle + Math.PI / 2)) + 2400, 550, 80);
-  drawBouncingPlatform(20 * Math.cos(2 * (angle + Math.PI / 2)) + 2600, 550, 80);
-  drawBouncingPlatform(20 * Math.cos(2 * (angle + Math.PI / 2)) + 2800, 550, 80);
+  drawBouncingPlatform(200 * Math.cos(2 * (angle + Math.PI / 2)) + 925, 550, 75);
+  drawBouncingPlatform(-200 * Math.cos(2 * (angle + Math.PI / 2)) + 1375, 550, 75);
+  drawBouncingPlatform(50 * Math.cos(2 * (angle + Math.PI / 2)) + 2400, 550, 80);
+  drawBouncingPlatform(50 * Math.cos(2 * (angle + Math.PI / 2)) + 2600, 550, 80);
+  drawBouncingPlatform(100 * Math.cos(4 * (angle + Math.PI / 2)) + 2800, 550, 80);
   
   drawFlag(3600);
   drawFloor(3200, 700);
