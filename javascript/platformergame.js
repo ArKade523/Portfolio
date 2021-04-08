@@ -130,7 +130,7 @@ function drawBack() {
   ctx.fillStyle = '#eee';
   ctx.font = '20px Roboto, sans-serif';
   ctx.fillText('Lives: ' + lives, canvas.width - 80, 20);
-  ctx.fillText('Level: ' + level, canvas.width - 120, 20);
+  ctx.fillText('Level: ' + level, canvas.width - 160, 20);
 }
 
 function drawLevel() {
