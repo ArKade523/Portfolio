@@ -236,6 +236,25 @@ function levelFour () {
   }
 }
 
+function levelFive () {
+  drawFloor(0, 700);
+  drawFloor(1700, 600);
+  
+  drawBouncingPlatform(200 * Math.cos(2 * (angle + Math.PI / 2)) + 950, 550, 100);
+  drawBouncingPlatform(-200 * Math.cos(2 * (angle + Math.PI / 2)) + 1350, 550, 100);
+  drawBouncingPlatform(20 * Math.cos(2 * (angle + Math.PI / 2)) + 2400, 550, 80);
+  drawBouncingPlatform(20 * Math.cos(2 * (angle + Math.PI / 2)) + 2600, 550, 80);
+  drawBouncingPlatform(20 * Math.cos(2 * (angle + Math.PI / 2)) + 2800, 550, 80);
+  
+  drawFlag(3600);
+  drawFloor(3200, 700);
+  
+  if (x >= screenX + 3600) {
+    win();
+    level = 5;
+  }
+}
+
 function drawFlag(xcor) {
   ctx.fillStyle = '#ddd';
   ctx.fillRect(screenX + xcor, 200, 20, canvas.height);
