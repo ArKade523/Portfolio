@@ -21,7 +21,7 @@ let lives = 3;
 let dead = false;
 let pause = false;
 let splash = true;
-let level = 1;
+let level = 4;
 
 function startScreen() {
   ctx.fillStyle = '#444';
@@ -147,7 +147,7 @@ function drawLevel() {
     levelThree();
   }
 	
-  if (level === 4) {
+  if (level === 4 || level === 5) {
     levelFour();	  
   }
 }
@@ -222,12 +222,13 @@ function levelFour () {
   drawFloor(0, 700);
   drawFloor(1700, 600);
   
-  drawPlatform(400 * Math.cos(angle) + 800, 550, 60);
+  drawPlatform(400 * Math.cos(angle) + 1150, 550, 100);
   drawBouncingPlatform(2400, 550, 80);
-  drawBouncingPlatform(2700, 550, 80);
+  drawBouncingPlatform(2600, 400, 80);
+  drawBouncingPlatform(2800, 250, 80);
   
   drawFlag(3600);
-  drawFloor(3100, 700);
+  drawFloor(3200, 700);
   
   if (x >= screenX + 3600) {
     win();
