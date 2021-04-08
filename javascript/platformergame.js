@@ -147,8 +147,12 @@ function drawLevel() {
     levelThree();
   }
 	
-  if (level === 4 || level === 5) {
+  if (level === 4) {
     levelFour();	  
+  }
+	
+  if (level === 5 || level === 6) {
+    levelFive();	  
   }
 }
 
@@ -251,7 +255,7 @@ function levelFive () {
   
   if (x >= screenX + 3600) {
     win();
-    level = 5;
+    level = 6;
   }
 }
 
