@@ -48,6 +48,7 @@ function restart() {
     up: false
   };
   screenX = 0;
+  let used = [false, false, false, false];
 }
 
 // Function to draw a platform
