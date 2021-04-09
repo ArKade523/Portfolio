@@ -371,8 +371,8 @@ function drawLife(xcor, ycor) {
 		ctx.closePath();
   	
   	if (x >= xcor - 10 && x <= xcor + 10 && y >= ycor - 10 && y <= ycor + 20 && !used[0]) {
-  		lives++;
-      used[0] = true;
+  		lives+=3;
+      		used[0] = true;
   	}
   }
 }
