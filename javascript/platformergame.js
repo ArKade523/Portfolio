@@ -267,7 +267,7 @@ function drawFlag(xcor) {
   ctx.fillRect(screenX + xcor, 200, 20, canvas.height);
   ctx.fillStyle = '#999';
   drawCircle(screenX + xcor + 10, 195, 12);
-  ctx.fillStyle = '#fff';
+  ctx.fillStyle = '#d33';
   ctx.beginPath();
   ctx.moveTo(screenX + xcor, 210);
   ctx.lineTo(screenX + xcor - 50, 235);
