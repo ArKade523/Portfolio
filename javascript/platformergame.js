@@ -48,7 +48,6 @@ function restart() {
     up: false
   };
   screenX = 0;
-  let used = [false, false, false, false];
 }
 
 // Function to draw a platform
@@ -208,7 +207,7 @@ function levelThree () {
 	drawFloor(-500, 1200);
   drawFloor(1700, 600);
   
-  drawLife(-200, canvas.height - 90 + 5 * Math.sin(2 * angle));
+  drawLife(-200, canvas.height - 90 + 5 * Math.sin(2 * angle), 0);
   
   drawPlatform(800, 550, 60);
   drawPlatform(1000, 650, 60);
@@ -362,18 +361,18 @@ function drawCloud(xcor, ycor) {
   ctx.closePath();
 }
 
-function drawLife(xcor, ycor) {
+function drawLife(xcor, ycor, i) {
   xcor += screenX;
-  if (!used[0]) {
+  if (!used[i]) {
   	ctx.beginPath();
   	ctx.fillStyle = '#3f3';
   	ctx.fillRect(xcor - 5, ycor - 15, 10, 30);
  		ctx.fillRect(xcor - 15, ycor - 5, 30, 10);
 		ctx.closePath();
   	
-  	if (x >= xcor - 10 && x <= xcor + 10 && y >= ycor - 10 && y <= ycor + 20 && !used[0]) {
+  	if (x >= xcor - 10 && x <= xcor + 10 && y >= ycor - 10 && y <= ycor + 20 && !used[i]) {
   		lives+=3;
-      		used[0] = true;
+      		used[i] = true;
   	}
   }
 }
@@ -429,6 +428,7 @@ function died() {
   ctx.fillText('Press Enter to Restart', canvas.width / 2 - 100, canvas.height / 2 + 60);
   dead = true;
   level = 1;
+  used = [false, false, false, false];
   setTimeout(document.addEventListener("keydown", keydown), 1000);
 }
 
