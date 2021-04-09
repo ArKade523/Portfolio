@@ -22,6 +22,7 @@ let dead = false;
 let pause = false;
 let splash = true;
 let level = 1;
+let used = [false, false, false, false];
 
 function startScreen() {
   ctx.fillStyle = '#444';
@@ -206,6 +207,8 @@ function levelThree () {
 	drawFloor(-500, 1200);
   drawFloor(1700, 600);
   
+  drawLife(-200, canvas.height - 90 + 5 * Math.sin(2 * angle));
+  
   drawPlatform(800, 550, 60);
   drawPlatform(1000, 650, 60);
   drawPlatform(1250, 650, 60);
@@ -358,6 +361,22 @@ function drawCloud(xcor, ycor) {
   ctx.closePath();
 }
 
+function drawLife(xcor, ycor) {
+  xcor += screenX;
+  if (!used[0]) {
+  	ctx.beginPath();
+  	ctx.fillStyle = '#3f3';
+  	ctx.fillRect(xcor - 5, ycor - 15, 10, 30);
+ 		ctx.fillRect(xcor - 15, ycor - 5, 30, 10);
+		ctx.closePath();
+  	
+  	if (x >= xcor - 10 && x <= xcor + 10 && y >= ycor - 10 && y <= ycor + 20 && !used[0]) {
+  		lives++;
+      used[0] = true;
+  	}
+  }
+}
+
 function drawHouse(xcor) {
   ctx.fillStyle = '#fec'
   ctx.fillRect(screenX + xcor, canvas.height - 210, 200, 150);
@@ -413,7 +432,7 @@ function died() {
 }
 
 function win() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawBack();
   ctx.fillStyle = '#eee';
   ctx.fillRect(canvas.width / 2 - 200, canvas.height / 2 - 125, 400, 250);
   ctx.fillRect(canvas.width / 2 - 225, canvas.height / 2 - 100, 450, 200);
