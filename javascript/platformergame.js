@@ -1,5 +1,3 @@
-'use strict';
-
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const inertia = 0.98;
@@ -23,6 +21,8 @@ let pause = false;
 let splash = true;
 let level = 1;
 let used = [false, false, false, false];
+let canJump = true;
+let onSticky = false;
 
 function startScreen() {
   ctx.fillStyle = '#444';
@@ -83,6 +83,25 @@ function drawBouncingPlatform(xcor, ycor, width) {
   }
 }
 
+function drawStickyPlatform(move, xcor, ycor, width) {
+  let height = 10;
+  xcor += height / 2;
+  xcor += move;
+  xcor += screenX;
+  ctx.beginPath();
+  ctx.fillStyle = '#2c6';
+  ctx.fillRect(xcor, ycor, width, height);
+  drawCircle(xcor, ycor + height / 2, height / 2);
+  drawCircle(xcor + width, ycor + height / 2, height / 2);
+  ctx.closePath();
+  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 5 && y >= ycor - 20 && dy >= 0) {
+  	onSticky = true;
+    dy = 0;
+    y = ycor - 15;
+  } else {
+  	onSticky = false;
+  }
+}
 
 function drawFloor(xcor, width) {
   let height = 60;
@@ -152,8 +171,12 @@ function drawLevel() {
     levelFour();	  
   }
 	
-  if (level === 5 || level === 6) {
+  if (level === 5) {
     levelFive();	  
+  }
+  
+  if (level === 6 || level === 7) {
+    levelSix();
   }
 }
 
@@ -217,7 +240,7 @@ function levelThree () {
   drawBouncingPlatform(2700, 550, 80);
   
   drawFlag(3600);
-  drawFloor(3100, 700);
+  drawFloor(3100, 600);
   
   if (x >= screenX + 3600) {
   	win();
@@ -235,7 +258,7 @@ function levelFour () {
   drawBouncingPlatform(2800, 250, 80);
   
   drawFlag(3600);
-  drawFloor(3200, 700);
+  drawFloor(3200, 500);
   
   if (x >= screenX + 3600) {
     win();
@@ -254,11 +277,33 @@ function levelFive () {
   drawBouncingPlatform(100 * Math.cos(4 * (angle + Math.PI / 2)) + 2800, 550, 80);
   
   drawFlag(3600);
-  drawFloor(3200, 700);
+  drawFloor(3200, 500);
   
   if (x >= screenX + 3600) {
     win();
     level = 6;
+  }
+}
+
+function levelSix () {
+  drawFloor(0, 700);
+  drawFloor(2500, 500);
+  
+  drawStickyPlatform(200 * Math.cos(2 * (angle + Math.PI / 2)), 900, -200 * Math.sin(2 * (angle + Math.PI / 2)) + 450, 100);
+  drawStickyPlatform(-200 * Math.cos(2 * (angle + Math.PI / 2)), 1450, -200 * Math.sin(2 * (angle + Math.PI / 2)) + 450, 100);
+  drawStickyPlatform(200 * Math.cos(2 * (angle + Math.PI / 2)), 2000, -200 * Math.sin(2 * (angle + Math.PI / 2)) + 450, 100);
+  
+  drawBouncingPlatform(3100, 550, 100);
+  drawBouncingPlatform(3100, 400, 100);
+  
+  drawStickyPlatform(200 * Math.cos(2 * (angle + Math.PI / 2)), 3600, -200 * Math.abs(Math.sin(2 * (angle + Math.PI / 2))) + 450, 100);
+  
+  drawFlag(4600);
+  drawFloor(4200, 500);
+  
+  if (x >= screenX + 4600) {
+    win();
+    level = 7;
   }
 }
 
@@ -293,9 +338,15 @@ function moveCharacter() {
       dx *= (inertia + 0.04);
     }
   }
-  if (keys.up && dy === 0) {
+  if (keys.up && canJump) {
     dy = -10;
   }
+ 	if (dy === 0) {
+  	canJump = true;
+  } else if(dy !== 0 && !onSticky) {
+  	canJump = false;
+  }
+  
   x += dx;
   y += dy;
 }
