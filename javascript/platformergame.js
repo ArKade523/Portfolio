@@ -19,7 +19,7 @@ let lives = 3;
 let dead = false;
 let pause = false;
 let splash = true;
-let level = 1;
+let level = 7;
 let used = [false, false, false, false];
 let canJump = true;
 let onSticky = false;
@@ -48,73 +48,6 @@ function restart() {
     up: false
   };
   screenX = 0;
-}
-
-// Function to draw a platform
-function drawPlatform(xcor, ycor, width) {
-  let height = 10;
-  xcor += height / 2;
-  xcor += screenX;
-  ctx.beginPath();
-  ctx.fillStyle = '#369';
-  ctx.fillRect(xcor, ycor, width, height);
-  drawCircle(xcor, ycor + height / 2, height / 2);
-  drawCircle(xcor + width, ycor + height / 2, height / 2);
-  ctx.closePath();
-  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 5 && y >= ycor - 15 && dy >= 0) {
-    dy = 0;
-    y = ycor - 15;
-  }
-}
-
-function drawBouncingPlatform(xcor, ycor, width) {
-  let height = 10;
-  xcor += height / 2;
-  xcor += screenX;
-  ctx.beginPath();
-  ctx.fillStyle = '#f72';
-  ctx.fillRect(xcor, ycor, width, height);
-  drawCircle(xcor, ycor + height / 2, height / 2);
-  drawCircle(xcor + width, ycor + height / 2, height / 2);
-  ctx.closePath();
-  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 5 && y >= ycor - 15 && dy >= 0) {
-    dy = -13;
-    y = ycor - 15;
-  }
-}
-
-function drawStickyPlatform(move, xcor, ycor, width) {
-  let height = 10;
-  xcor += height / 2;
-  xcor += move;
-  xcor += screenX;
-  ctx.beginPath();
-  ctx.fillStyle = '#2c6';
-  ctx.fillRect(xcor, ycor, width, height);
-  drawCircle(xcor, ycor + height / 2, height / 2);
-  drawCircle(xcor + width, ycor + height / 2, height / 2);
-  ctx.closePath();
-  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 5 && y >= ycor - 20 && dy >= 0) {
-  	onSticky = true;
-    dy = 0;
-    y = ycor - 15;
-  } else {
-  	onSticky = false;
-  }
-}
-
-function drawFloor(xcor, width) {
-  let height = 60;
-  let ycor = canvas.height - 60;
-  xcor += screenX;
-  ctx.beginPath();
-  ctx.fillStyle = '#093';
-  ctx.fillRect(xcor, ycor, width, height);
-  ctx.closePath();
-  if (x >= xcor && x <= xcor + width && y <= ycor + 8 && y >= ycor - 15 && dy >= 0) {
-    dy = 0;
-    y = ycor - 15;
-  }
 }
 
 // draw background
@@ -175,8 +108,12 @@ function drawLevel() {
     levelFive();	  
   }
   
-  if (level === 6 || level === 7) {
+  if (level === 6) {
     levelSix();
+  }
+  
+  if (level === 7) {
+  	levelSeven();
   }
 }
 
@@ -252,7 +189,7 @@ function levelFour () {
   drawFloor(0, 700);
   drawFloor(1700, 600);
   
-  drawPlatform(400 * Math.cos(angle + Math.PI / 2) + 1150, 550, 100);
+  movePlatform(drawPlatform, 400 * Math.cos(angle + Math.PI / 2), 1150, 0, 550, 100);
   drawBouncingPlatform(2400, 550, 80);
   drawBouncingPlatform(2600, 400, 80);
   drawBouncingPlatform(2800, 250, 80);
@@ -270,11 +207,11 @@ function levelFive () {
   drawFloor(0, 700);
   drawFloor(1700, 600);
   
-  drawBouncingPlatform(200 * Math.cos(2 * (angle + Math.PI / 2)) + 925, 550, 75);
-  drawBouncingPlatform(-200 * Math.cos(2 * (angle + Math.PI / 2)) + 1375, 550, 75);
-  drawBouncingPlatform(50 * Math.cos(2 * (angle + Math.PI / 2)) + 2400, 550, 80);
-  drawBouncingPlatform(50 * Math.cos(2 * (angle + Math.PI / 2)) + 2600, 550, 80);
-  drawBouncingPlatform(100 * Math.cos(4 * (angle + Math.PI / 2)) + 2800, 550, 80);
+  movePlatform(drawBouncingPlatform, 200 * Math.cos(2 * (angle + Math.PI / 2)), 925, 0, 550, 75);
+  movePlatform(drawBouncingPlatform, -200 * Math.cos(2 * (angle + Math.PI / 2)), 1375, 0, 550, 75);
+  movePlatform(drawBouncingPlatform, 50 * Math.cos(2 * (angle + Math.PI / 2)), 2400, 0, 550, 80);
+  movePlatform(drawBouncingPlatform, 50 * Math.cos(2 * (angle + Math.PI / 2)), 2600, 0, 550, 80);
+  movePlatform(drawBouncingPlatform, 100 * Math.cos(4 * (angle + Math.PI / 2)), 2800, 0, 550, 80);
   
   drawFlag(3600);
   drawFloor(3200, 500);
@@ -289,14 +226,14 @@ function levelSix () {
   drawFloor(0, 700);
   drawFloor(2500, 500);
   
-  drawStickyPlatform(200 * Math.cos(2 * (angle + Math.PI / 2)), 900, -200 * Math.sin(2 * (angle + Math.PI / 2)) + 450, 100);
-  drawStickyPlatform(-200 * Math.cos(2 * (angle + Math.PI / 2)), 1450, -200 * Math.sin(2 * (angle + Math.PI / 2)) + 450, 100);
-  drawStickyPlatform(200 * Math.cos(2 * (angle + Math.PI / 2)), 2000, -200 * Math.sin(2 * (angle + Math.PI / 2)) + 450, 100);
+  movePlatform(drawPlatform, 200 * Math.cos(2 * (angle + Math.PI / 2)), 900, -200 * Math.sin(2 * (angle + Math.PI / 2)), 450, 100);
+  movePlatform(drawPlatform, -200 * Math.cos(2 * (angle + Math.PI / 2)), 1450, -200 * Math.sin(2 * (angle + Math.PI / 2)), 450, 100);
+  movePlatform(drawPlatform, 200 * Math.cos(2 * (angle + Math.PI / 2)), 2000, -200 * Math.sin(2 * (angle + Math.PI / 2)), 450, 100);
   
   drawBouncingPlatform(3100, 550, 100);
   drawBouncingPlatform(3100, 400, 100);
   
-  drawStickyPlatform(200 * Math.cos(2 * (angle + Math.PI / 2)), 3600, -200 * Math.abs(Math.sin(2 * (angle + Math.PI / 2))) + 450, 100);
+  movePlatform(drawPlatform, 200 * Math.cos(2 * (angle + Math.PI / 2)), 3600, -200 * Math.abs(Math.sin(2 * (angle + Math.PI / 2))), 450, 100);
   
   drawFlag(4600);
   drawFloor(4200, 500);
@@ -304,6 +241,125 @@ function levelSix () {
   if (x >= screenX + 4600) {
     win();
     level = 7;
+  }
+}
+
+function levelSeven () {
+	drawFloor(0, 700);
+  drawFloor(1400, 500);
+  
+  drawStickyPlatform(850, 550, 100);
+  movePlatform(drawPlatform, 0, 850, -200 * Math.sin(2 * (angle + Math.PI / 2)), 550, 100);
+  movePlatform(drawDeadlyPlatform, 0, 1150, -200 * Math.sin(2 * (angle)), 550, 100);
+  drawPlatform(1150, 550, 100);
+  movePlatform(drawStickyPlatform, 0, 2000, -200 * Math.sin(2 * (angle)), 450, 100);
+  drawDeadlyPlatform(2150, 450, 50);
+  movePlatform(drawStickyPlatform, 0, 2250, -200 * Math.sin(2 * (angle + Math.PI / 2)), 450, 100);
+  drawDeadlyPlatform(2400, 450, 50);
+  movePlatform(drawStickyPlatform, 0, 2500, -200 * Math.sin(2 * (angle)), 450, 100);
+  drawDeadlyPlatform(2650, 450, 50);
+  movePlatform(drawPlatform, 0, 2750, -200 * Math.sin(2 * (angle + Math.PI / 2)), 450, 100);
+  drawFloor(3000, 500);
+  movePlatform(drawPlatform, 200 * Math.cos(2 * (angle + Math.PI / 2)), 3700, 0, 550, 75);
+  drawDeadlyPlatform(3700, 525, 50);
+  
+  drawFlag(4600);
+  drawFloor(4200, 500);
+  
+  if (x >= screenX + 4600) {
+    win();
+    level = 7;
+  }
+}
+
+// Function to draw a platform
+function drawPlatform(xcor, ycor, width) {
+  let height = 10;
+  xcor += height / 2;
+  xcor += screenX;
+  ctx.beginPath();
+  ctx.fillStyle = '#369';
+  ctx.fillRect(xcor, ycor, width, height);
+  drawCircle(xcor, ycor + height / 2, height / 2);
+  drawCircle(xcor + width, ycor + height / 2, height / 2);
+  ctx.closePath();
+  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 5 && y >= ycor - 20 && dy >= 0) {
+    dy = 0;
+    y = ycor - 15;
+    onSticky = false;
+  }
+}
+
+function drawBouncingPlatform(xcor, ycor, width) {
+  let height = 10;
+  xcor += height / 2;
+  xcor += screenX;
+  ctx.beginPath();
+  ctx.fillStyle = '#f72';
+  ctx.fillRect(xcor, ycor, width, height);
+  drawCircle(xcor, ycor + height / 2, height / 2);
+  drawCircle(xcor + width, ycor + height / 2, height / 2);
+  ctx.closePath();
+  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 5 && y >= ycor - 20 && dy >= 0) {
+    dy = -13;
+    y = ycor - 15;
+    onSticky = false;
+  }
+}
+
+function movePlatform(type, moveX, xcor, moveY, ycor, width) {
+  xcor += moveX;
+  ycor += moveY;
+  type(xcor, ycor, width);
+}
+
+function drawStickyPlatform(xcor, ycor, width) {
+  let height = 10;
+  xcor += height / 2;
+  xcor += screenX;
+  ctx.beginPath();
+  ctx.fillStyle = '#3d6';
+  ctx.fillRect(xcor, ycor, width, height);
+  drawCircle(xcor, ycor + height / 2, height / 2);
+  drawCircle(xcor + width, ycor + height / 2, height / 2);
+  ctx.closePath();
+  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 5 && y >= ycor - 20 && dy >= 0) {
+    dy = 0;
+    y = ycor - 15;
+  }
+  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor - 5 && y >= ycor - 20){
+  	onSticky = true;
+  }
+}
+
+function drawDeadlyPlatform(xcor, ycor, width) {
+  let height = 10;
+  xcor += height / 2;
+  xcor += screenX;
+  ctx.beginPath();
+  ctx.fillStyle = '#f22';
+  ctx.fillRect(xcor, ycor, width, height);
+  drawCircle(xcor, ycor + height / 2, height / 2);
+  drawCircle(xcor + width, ycor + height / 2, height / 2);
+  ctx.closePath();
+  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor + 15 && y >= ycor - 20 && dy >= 0) {
+    lifeLost();
+    onSticky = false;
+  }
+}
+
+function drawFloor(xcor, width) {
+  let height = 60;
+  let ycor = canvas.height - 60;
+  xcor += screenX;
+  ctx.beginPath();
+  ctx.fillStyle = '#093';
+  ctx.fillRect(xcor, ycor, width, height);
+  ctx.closePath();
+  if (x >= xcor && x <= xcor + width && y <= ycor + 8 && y >= ycor - 15 && dy >= 0) {
+    dy = 0;
+    y = ycor - 15;
+    onSticky = false;
   }
 }
 
@@ -343,7 +399,11 @@ function moveCharacter() {
   }
  	if (dy === 0) {
   	canJump = true;
-  } else if(dy !== 0 && !onSticky) {
+  } 
+  if(dy !== 0) {
+  	canJump = false;
+  } 
+  if (onSticky) {
   	canJump = false;
   }
   
