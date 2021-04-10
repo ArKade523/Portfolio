@@ -19,7 +19,7 @@ let lives = 3;
 let dead = false;
 let pause = false;
 let splash = true;
-let level = 1;
+let level = 7;
 let used = [false, false, false, false];
 let canJump = true;
 let onSticky = false;
@@ -250,18 +250,18 @@ function levelSeven () {
   
   drawStickyPlatform(850, 550, 100);
   movePlatform(drawPlatform, 0, 850, -200 * Math.sin(2 * (angle + Math.PI / 2)), 550, 100);
-  movePlatform(drawDeadlyPlatform, 0, 1150, -200 * Math.sin(2 * (angle)), 550, 100);
+  movePlatform(drawDeadly, 0, 1150, -200 * Math.sin(2 * (angle)), 550, 100);
   drawPlatform(1150, 550, 100);
   movePlatform(drawStickyPlatform, 0, 2000, -200 * Math.sin(2 * (angle)), 450, 100);
-  drawDeadlyPlatform(2150, 450, 50);
+  drawDeadly(2150, 450, 50);
   movePlatform(drawStickyPlatform, 0, 2250, -200 * Math.sin(2 * (angle + Math.PI / 2)), 450, 100);
-  drawDeadlyPlatform(2400, 450, 50);
+  drawDeadly(2400, 450, 50);
   movePlatform(drawStickyPlatform, 0, 2500, -200 * Math.sin(2 * (angle)), 450, 100);
-  drawDeadlyPlatform(2650, 450, 50);
+  drawDeadly(2650, 450, 50);
   movePlatform(drawPlatform, 0, 2750, -200 * Math.sin(2 * (angle + Math.PI / 2)), 450, 100);
   drawFloor(3000, 500);
   movePlatform(drawPlatform, 200 * Math.cos(2 * (angle + Math.PI / 2)), 3700, 0, 550, 75);
-  drawDeadlyPlatform(3700, 525, 50);
+  drawDeadly(3700, 525, 50);
   
   drawFlag(4600);
   drawFloor(4200, 500);
@@ -332,17 +332,20 @@ function drawStickyPlatform(xcor, ycor, width) {
   }
 }
 
-function drawDeadlyPlatform(xcor, ycor, width) {
+function drawDeadly(xcor, ycor, width) {
   let height = 10;
   xcor += height / 2;
   xcor += screenX;
+  xcor += width / 2;
+  width /= 4;
   ctx.beginPath();
   ctx.fillStyle = '#f22';
-  ctx.fillRect(xcor, ycor, width, height);
-  drawCircle(xcor, ycor + height / 2, height / 2);
-  drawCircle(xcor + width, ycor + height / 2, height / 2);
+  ctx.moveTo(xcor + width * Math.cos(20 * angle), ycor + width * Math.sin(20 * angle));
+  ctx.lineTo(xcor + width * Math.cos(20 * (angle + 2 * Math.PI / 3)), ycor + width * Math.sin(20 * (angle + 2 * Math.PI / 3)));
+  ctx.lineTo(xcor + width * Math.cos(20 * (angle + 4 * Math.PI / 3)), ycor + width * Math.sin(20 * (angle + 4 * Math.PI / 3)));
+  ctx.fill();
   ctx.closePath();
-  if (x >= xcor - 10 && x <= xcor + width + 10 && y <= ycor + 15 && y >= ycor - 20 && dy >= 0) {
+  if (x >= xcor - 1.5 * width && x <= xcor +  1.5 * width && y <= ycor + 1.5 * width && y >= ycor - 1.5 * width && dy >= 0) {
     lifeLost();
     onSticky = false;
   }
@@ -400,10 +403,7 @@ function moveCharacter() {
  	if (dy === 0) {
   	canJump = true;
   } 
-  if(dy !== 0) {
-  	canJump = false;
-  } 
-  if (onSticky) {
+  if(dy !== 0 || onSticky) {
   	canJump = false;
   }
   
