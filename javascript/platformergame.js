@@ -606,7 +606,7 @@ function draw() {
       screenX = 500;
     }
 
-    if (y >= canvas.height) {
+    if (y >= canvas.height + 15) {
       lifeLost();
     }
   }
