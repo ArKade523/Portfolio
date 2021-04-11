@@ -258,7 +258,7 @@ function levelSeven () {
   drawDeadly(2400, 450, 50);
   movePlatform(drawStickyPlatform, 0, 2500, -200 * Math.sin(2 * (angle)), 450, 100);
   drawDeadly(2650, 450, 50);
-  movePlatform(drawPlatform, 0, 2750, -200 * Math.sin(2 * (angle + Math.PI / 2)), 450, 100);
+  movePlatform(drawStickyPlatform, 0, 2750, -200 * Math.sin(2 * (angle + Math.PI / 2)), 450, 100);
   drawFloor(3000, 500);
   movePlatform(drawPlatform, 200 * Math.cos(2 * (angle + Math.PI / 2)), 3700, 0, 550, 75);
   drawDeadly(3700, 525, 50);
