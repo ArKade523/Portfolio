@@ -4,7 +4,7 @@ const inertia = 0.98;
 
 // Changing Global Variables
 let x = canvas.width / 5;
-let y = canvas.height - 75;
+let y = canvas.height - 275;
 let dx = 0;
 let dy = 0;
 let angle = 0;
