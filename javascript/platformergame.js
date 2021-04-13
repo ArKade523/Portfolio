@@ -281,43 +281,49 @@ function levelEight () {
   drawFloor(0, 700);
   
   drawStickyPlatform(850, 550, 100);
-  drawDeadly(900, 600, 50);
-  movePlatform(drawPlatform, 0, 975, -300 * Math.sin(2 * (angle)), 600, 100);
-  drawDeadly(975, 285, 50);
-  drawDeadly(1025, 285, 50);
-  drawDeadly(1075, 285, 50);
-  drawBouncingPlatform(1200, 500, 100);
+  drawDeadly(800, 475, 50);
+  movePlatform(drawPlatform, 0, 975, -200 * Math.sin(2 * (angle)), 400, 100);
+  drawDeadly(950, 285, 50);
+  drawDeadly(1000, 285, 50);
+  drawDeadly(1050, 285, 50);
+  drawBouncingPlatform(1200, 600, 100);
   drawDeadly(1325, 550, 50);
   drawDeadly(1325, 500, 50);
   drawDeadly(1325, 450, 50);
-  drawStickyPlatform(1350, 475, 100);
-  drawFloor(1450, 150);
-  drawFloor(1800, 150);
-  if (radius <= pi) {
-    drawDeadly(1600, 550, 50);
-    drawDeadly(1600, 500, 50);
-    drawDeadly(1600, 450, 50);
+  drawStickyPlatform(1400, 475, 100);
+  drawFloor(1550, 300);
+  drawFloor(2000, 150);
+  if (angle <= 3 * pi / 2) {
+    drawDeadly(1800, 625, 50);
+    drawDeadly(1800, 600, 50);
+    drawDeadly(1800, 575, 50);
     drawDeadly(1800, 550, 50);
-    drawDeadly(1800, 500, 50);
-    drawDeadly(1800, 450, 50);
-    drawFloor(1599, 202);
-    movePlatform(drawBouncingPlatform, 200 * Math.cos(2 * (angle)), 2050, 0, 550, 100);
-  } else if (radius > pi) {
-    movePlatform(drawStickyPlatform, 200 * Math.cos(2 * (angle)), 2050, 0, 550, 100);
+    drawDeadly(1800, 525, 50);
+
+    drawDeadly(2000, 625, 50);
+    drawDeadly(2000, 600, 50);
+    drawDeadly(2000, 575, 50);
+    drawDeadly(2000, 550, 50);
+    drawDeadly(2000, 525, 50);
+
+    drawFloor(1849, 152);
+    movePlatform(drawBouncingPlatform, 200 * Math.cos(2 * (angle)), 2350, 0, 550, 100);
+  } else if (angle > 3 * pi / 2) {
+    movePlatform(drawStickyPlatform, 200 * Math.cos(2 * (angle)), 2350, 0, 550, 100);
   }
-  drawDeadly(2400, 500, 100);
-  drawDeadly(2450, 500, 100);
-  drawDeadly(2500, 500, 100);
-  movePlatform(drawStickyPlatform, 0, 2550, -300 * Math.sin(2 * (angle)), 550, 100);
-  drawDeadly(2800, 500, 50);
-  drawDeadly(2850, 500, 50);
-  drawDeadly(2900, 500, 50);
-  drawLife(2850, canvas.height - 200 + 5 * Math.sin(2 * angle), 1);
+  drawDeadly(2600, 500, 100);
+  drawDeadly(2650, 500, 100);
+  drawDeadly(2700, 500, 100);
+  movePlatform(drawStickyPlatform, 0, 2850, -50 * Math.sin(2 * (angle)), 550, 100);
+  drawDeadly(3100, 575, 50);
+  drawDeadly(3150, 575, 50);
+  drawDeadly(3200, 575, 50);
+  drawLife(3150, canvas.height - 200 + 5 * Math.sin(2 * angle), 1);
   
-  drawFlag(3100);
-  drawFloor(2700, 500);
+  drawFlag(3500);
+  drawFloor(3000, 500);
   
-  if (x >= screenX + 3100) {
+  if (x >= screenX + 3400) {
     win();
     level = 8;
   }
