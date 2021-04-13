@@ -320,7 +320,7 @@ function levelEight () {
   drawDeadly(3200, 575, 50);
   drawLife(3150, canvas.height - 200 + 5 * Math.sin(2 * angle), 1);
   
-  drawFlag(3500);
+  drawFlag(3400);
   drawFloor(3000, 500);
   
   if (x >= screenX + 3400) {
