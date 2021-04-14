@@ -169,7 +169,7 @@ function levelTwo() {
 }
 
 function levelThree () {
-	drawFloor(-500, 1200);
+  drawFloor(-500, 1200);
   drawFloor(1700, 600);
   
   drawLife(-200, canvas.height - 90 + 5 * Math.sin(2 * angle), 0);
