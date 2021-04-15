@@ -63,7 +63,7 @@ div.body.home {
   position: relative;
   top: 42px;
   display: grid;
-  grid-template-columns: 150px repeat(3, 1fr);
+  grid-template-columns: 400px repeat(2, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
 }
