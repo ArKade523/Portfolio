@@ -63,9 +63,9 @@ div.body.home {
   position: relative;
   top: 42px;
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  grid-gap: 10px; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
 
 p.body.home, h2.body.home {
