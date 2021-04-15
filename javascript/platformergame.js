@@ -3,11 +3,6 @@ const ctx = canvas.getContext('2d');
 const inertia = 0.98;
 const pi = Math.PI;
 
-// Make music play
-window.onload = function() {
-    document.getElementById("audioplayer").play();
-}
-
 // Changing Global Variables
 let x = canvas.width / 5;
 let y = canvas.height - 75;
