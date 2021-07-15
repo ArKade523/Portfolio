@@ -1,5 +1,5 @@
- body {
-  background-color: #444;
+body {
+  background-color: #004;
   height: auto;
   width: auto;
   overflow-x: hidden;
@@ -58,7 +58,7 @@ div.body {
   height: 1000px;
   width: 90%;
   background-color: #eee;
-  opacity: 0.2;
+  opacity: 0.3;
   margin: auto;
 }
 
