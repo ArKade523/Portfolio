@@ -63,33 +63,45 @@ div.body.home {
   position: relative;
   top: 42px;
   display: grid;
-  grid-template-columns: 400px repeat(2, 1fr);
-  gap: 10px;
+  grid-template-columns: 400px repeat(1, 1fr);
+  gap: 40px;
   grid-auto-rows: minmax(100px, auto);
 }
 
 p.body.home, h2.body.home {
   position: relative;
   top: 50px;
-  margin-left: 5%;
+  margin: auto;
+  padding: 5%;
   justify-content: center;
   color: #e0e0e0;
   font-family: "Roboto";
 }
 
+h2.body.home {
+ font-size: large;
+}
+
+p.body.home {
+ font-size: medium;
+}
+
 .body .image1 {
+  box-shadow: 10px 10px #888;
   margin: auto;
   height: auto;
   width: 400px;
 }
 
 .body .image2 {
+  box-shadow: 10px 10px #888;
   margin: auto;
   height: auto;
   width: 900px;
 }
 
 .body .image3 {
+  box-shadow: 10px 10px #888;
   margin: auto;
   height: auto;
   width: 400px;
