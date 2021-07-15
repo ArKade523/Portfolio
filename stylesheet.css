@@ -65,7 +65,7 @@ div.body.home {
   position: relative;
   top: 100px;
   display: grid;
-  grid-template-columns: minmax(400px, 0.9fr) minmax(400px, 1fr);
+  grid-template-columns: minmax(400px, 0.9fr) minmax(400px, 0.9fr);
   gap: 40px;
   grid-auto-rows: minmax(100px, 0.9fr) minmax(100px, 0.9fr) minmax(100px, 0.9fr);
 }
@@ -90,9 +90,9 @@ p.body.home {
 
 p.body.home.blurb {
  font-size: large;
- height: 200px;
- width: 300px;
- background-color: rgba(240, 240, 240, 0.3);
+ height: 300px;
+ width: 500px;
+ background-color: #004;
 }
 
 .body {
