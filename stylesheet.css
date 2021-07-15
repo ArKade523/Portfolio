@@ -93,7 +93,7 @@ p.body.home {
 }
 
 .body .image1 {
-  box-shadow: -10px 10px #666;
+  box-shadow: -20px 20px #666;
   top: 10px;
   margin: auto;
   height: auto;
@@ -102,7 +102,7 @@ p.body.home {
 }
 
 .body .image2 {
-  box-shadow: -10px 10px #666;
+  box-shadow: -20px 20px #666;
   margin: auto;
   height: auto;
   width: 300px;
@@ -110,7 +110,7 @@ p.body.home {
 }
 
 .body .image3 {
-  box-shadow: -10px 10px #666;
+  box-shadow: -20px 20px #666;
   margin: auto;
   height: auto;
   width: 300px;
