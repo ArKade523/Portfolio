@@ -55,7 +55,7 @@ body {
 }
 
 div.body.foreground {
-  height: 150vh;
+  height: 200vh;
   width: 90%;
   background-color: rgba(240, 240, 240, 0.3);
   margin: auto;
