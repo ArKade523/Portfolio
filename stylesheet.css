@@ -54,7 +54,7 @@ body {
   font-weight: 100;
 }
 
-div.body {
+div.body.foreground {
   height: 1000px;
   width: 90%;
   background-color: #eee;
