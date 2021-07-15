@@ -87,21 +87,21 @@ p.body.home {
 }
 
 .body .image1 {
-  box-shadow: 0px 10px 10px 0px #666;
+  box-shadow: -10px 10px #666;
   margin: auto;
   height: auto;
   width: 200px;
 }
 
 .body .image2 {
-  box-shadow: 0px 10px 10px 0px #666;
+  box-shadow: -10px 10px #666;
   margin: auto;
   height: auto;
   width: 450px;
 }
 
 .body .image3 {
-  box-shadow: 0px 10px 10px 0px #666;
+  box-shadow: -10px 10px #666;
   margin: auto;
   height: auto;
   width: 200px;
