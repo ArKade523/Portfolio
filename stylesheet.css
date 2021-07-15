@@ -64,7 +64,7 @@ div.body.foreground {
 
 div.body.home {
   position: relative;
-  top: 50px;
+  top: 100px;
   display: grid;
   grid-template-columns: 400px repeat(1, 1fr);
   gap: 40px;
@@ -73,7 +73,7 @@ div.body.home {
 
 p.body.home, h2.body.home {
   position: relative;
-  top: 50px;
+  top: 75px;
   margin: auto;
   padding: 0%;
   color: #e0e0e0;
