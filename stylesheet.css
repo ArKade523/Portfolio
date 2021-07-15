@@ -55,10 +55,11 @@ body {
 }
 
 div.body.foreground {
-  height: 200vh;
+  height: 150vh;
   width: 90%;
   background-color: rgba(240, 240, 240, 0.3);
   margin: auto;
+  align-content: center;
 }
 
 div.body.home {
