@@ -72,36 +72,36 @@ p.body.home, h2.body.home {
   position: relative;
   top: 25px;
   margin: auto;
-  padding: 5%;
+  padding: 0%;
   color: #e0e0e0;
   font-family: "Roboto";
   text-align: center;
 }
 
 h2.body.home {
- font-size: xx-large;
+ font-size: 50%;
 }
 
 p.body.home {
- font-size: x-large;
+ font-size: large;
 }
 
 .body .image1 {
-  box-shadow: -10px 10px #666;
+  box-shadow: -10px 10px 5px 0px #666;
   margin: auto;
   height: auto;
   width: 300px;
 }
 
 .body .image2 {
-  box-shadow: -10px 10px #666;
+  box-shadow: -10px 10px 0px 5px #666;
   margin: auto;
   height: auto;
   width: 300px;
 }
 
 .body .image3 {
-  box-shadow: -10px 10px #666;
+  box-shadow: -10px 10px 5px 0px #666;
   margin: auto;
   height: auto;
   width: 300px;
