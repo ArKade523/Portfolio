@@ -56,7 +56,10 @@
 
 div.body {
   height: 1000px;
-  width: auto;
+  width: 90%;
+  background-color: #eee;
+  opacity: 0.4;
+  border-radius: 10%;
 }
 
 div.body.home {
