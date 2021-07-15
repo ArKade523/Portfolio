@@ -58,8 +58,8 @@ div.body {
   height: 1000px;
   width: 90%;
   background-color: #eee;
-  opacity: 0.4;
-  border-radius: 10%;
+  opacity: 0.2;
+  margin: auto;
 }
 
 div.body.home {
@@ -82,15 +82,15 @@ p.body.home, h2.body.home {
 }
 
 h2.body.home {
- font-size: 50%;
+ font-size: 400%;
 }
 
 p.body.home {
- font-size: large;
+ font-size: x-large;
 }
 
 .body {
- border-radius: 5%;
+ border-radius: 2.5%;
 }
 
 .body .image1 {
