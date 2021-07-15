@@ -88,6 +88,13 @@ p.body.home {
  font-size: x-large;
 }
 
+p.body.home.blurb {
+ font-size: large;
+ height: 200px;
+ width: 300px;
+ background-color: rgba(240, 240, 240, 0.3);
+}
+
 .body {
  border-radius: 2.5%;
 }
