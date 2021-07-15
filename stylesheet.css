@@ -91,13 +91,18 @@ p.body.home {
 }
 
 p.blurb {
+ display: inline-block;
  font-size: large;
- height: 300px;
- width: 500px;
+ height: .3fr;
+ width: .5fr;
  background-color: #eee;
  padding: 10px;
  color: #333;
  box-shadow: -20px 20px #666;
+}
+
+div.imagecontainer {
+ display: block; 
 }
 
 .body {
@@ -105,6 +110,7 @@ p.blurb {
 }
 
 .body .image {
+  display: inline-block;
   box-shadow: -20px 20px #666;
   top: 10px;
   margin: auto;
