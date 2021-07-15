@@ -90,36 +90,23 @@ p.body.home {
  font-size: x-large;
 }
 
-p.body.home.blurb {
+p.blurb {
  font-size: large;
  height: 300px;
  width: 500px;
- background-color: #004;
+ background-color: #eee;
+ padding: 10px;
+ color: #333;
+ box-shadow: -20px 20px #666;
 }
 
 .body {
  border-radius: 2.5%;
 }
 
-.body .image1 {
+.body .image {
   box-shadow: -20px 20px #666;
   top: 10px;
-  margin: auto;
-  height: auto;
-  width: 300px;
-  opacity: 1;
-}
-
-.body .image2 {
-  box-shadow: -20px 20px #666;
-  margin: auto;
-  height: auto;
-  width: 300px;
-  opacity: 1;
-}
-
-.body .image3 {
-  box-shadow: -20px 20px #666;
   margin: auto;
   height: auto;
   width: 300px;
