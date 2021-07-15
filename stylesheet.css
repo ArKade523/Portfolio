@@ -55,7 +55,7 @@ body {
 }
 
 div.body.foreground {
-  height: 1000px;
+  height: 150vh;
   width: 90%;
   background-color: rgba(240, 240, 240, 0.3);
   margin: auto;
@@ -94,6 +94,7 @@ p.body.home {
 
 .body .image1 {
   box-shadow: -10px 10px #666;
+  top: 10px;
   margin: auto;
   height: auto;
   width: 300px;
