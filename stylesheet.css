@@ -127,7 +127,6 @@ div.body p, h1, h3 {
   top: 50px;
   left: 20px;
   font-family: "Roboto", sans-serif;
-  color: #e0e0e0;
 }
 
 div.body.aboutme {
@@ -144,6 +143,7 @@ div.body.aboutme {
 div.body h2.aboutme {
   position: relative;
   left: 17px;
+  color: #e0e0e0;
 }
 
 .portrait.aboutme {
@@ -157,7 +157,7 @@ div.body h2.aboutme {
 }
 
 div.body p.aboutme {
-  
+  color: #e0e0e0
 }
 
 .body .workexperience {
