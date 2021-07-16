@@ -1,4 +1,5 @@
-/*body {
+}
+body {
   background-color: #004;
   height: auto;
   width: auto;
@@ -23,23 +24,19 @@
   background-color: #777;
   border-bottom: 3px solid #f0d000;
 }
-
 .nav {
   float: right;
   align-text: center;
   display: block;
   padding: 5px;
 }
-
 .current-page {
   border-bottom: 3px solid #f0d000;
 }
-
 .link {
   text-decoration: none;
   color: #e0e0e0;
 }
-
 #logo {
   height: 30px;
   width: auto;
@@ -47,76 +44,79 @@
   margin-right: 5px;
   margin-left: 5px;
 }
-
 #name {
   font-size: 25px;
   float: left;
   font-weight: 100;
 }
 
-div.body.home {
+h2.home {
   position: relative;
-  top: 100px;
-  display: block;
-  height: 150vh;
-  width: 90%;
-  background-color: rgba(240, 240, 240, 0.3);
+  color: #eee;
+  font-size: 400%;
   margin: auto;
-  align-content: center;
-  padding: 0px 10px 50px 10px;
-  grid-template-columns: minmax(400px, 0.9fr) minmax(400px, 0.9fr);
-  gap: 40px;
-  grid-auto-rows: minmax(100px, 0.9fr) minmax(100px, 0.9fr) minmax(100px, 0.9fr);
-}
-
-p.body.home, h2.body.home {
-  position: relative;
-  top: 75px;
-  margin: auto;
-  padding: 0%;
-  color: #e0e0e0;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
+  top: 1em;
   text-align: center;
 }
 
-h2.body.home {
- font-size: 400%;
+p.home {
+  position: relative;
+  color: #eee;
+  font-size: 200%;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+  top: 2em;
+  text-align: center;
 }
 
-p.body.home {
- font-size: x-large;
-}
-
-p.blurb {
- display: inline-block;
- font-size: large;
- height: .3fr;
- width: .5fr;
- background-color: #eee;
- padding: 10px;
- color: #333;
- box-shadow: -20px 20px #666;
+div.foreground {
+  position: relative;
+  top: 6em;
+  display: block;
+  height: 150vh;
+  width: 90%;
+  background-color: rgba(240, 240, 240, 0.4);
+  margin: auto;
+  padding: 1em 2em 1em 2em;
+  justify-content: center;
+  border-radius: 1em;
 }
 
 div.imagecontainer {
- display: inline-block; 
-}
-
-.body {
- border-radius: 2.5%;
-}
-
-.body .image {
-  display: inline-block;
-  box-shadow: -20px 20px #666;
-  top: 10px;
-  margin: auto;
+  display: block;
   height: auto;
-  width: 300px;
-  opacity: 1;
+  width: 100%;
 }
 
-div.body p.aboutme, h2.aboutme {
+div.img {
+  display: inline-block;
+  width: 25em;
+  height: auto;
+  margin: 1em;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  box-shadow: -.8em .8em #444;
+}
+
+div.blurb {
+  display: inline-block;
+  height: 100%;
+  width: 45vw;
+  float: right;
+  padding: 1em;
+  background-color: rgba(240, 240, 240, 0.8);
+  box-shadow: -.8em .8em #444;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  color: #222;
+  margin: 1em;
+}
+
+/*div.body p.aboutme, h2.aboutme {
   font-family: "Roboto", sans-serif;
   color: #e0e0e0;
   padding: 1% 5%;
@@ -127,7 +127,7 @@ div.body p, h1, h3 {
   top: 50px;
   left: 20px;
   font-family: "Roboto", sans-serif;
-}
+}*/
 
 div.body.aboutme {
   position: relative;
@@ -183,4 +183,4 @@ canvas {
  background-color: #eee;
  display: block;
  margin: 0 auto;
-}*/
+}
