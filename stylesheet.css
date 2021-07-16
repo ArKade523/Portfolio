@@ -1,4 +1,4 @@
-body {
+/*body {
   background-color: #004;
   height: auto;
   width: auto;
@@ -64,9 +64,9 @@ div.body.home {
   margin: auto;
   align-content: center;
   padding: 0px 10px 50px 10px;
-  /*grid-template-columns: minmax(400px, 0.9fr) minmax(400px, 0.9fr);
+  grid-template-columns: minmax(400px, 0.9fr) minmax(400px, 0.9fr);
   gap: 40px;
-  grid-auto-rows: minmax(100px, 0.9fr) minmax(100px, 0.9fr) minmax(100px, 0.9fr);*/
+  grid-auto-rows: minmax(100px, 0.9fr) minmax(100px, 0.9fr) minmax(100px, 0.9fr);
 }
 
 p.body.home, h2.body.home {
@@ -183,4 +183,4 @@ canvas {
  background-color: #eee;
  display: block;
  margin: 0 auto;
-}
+}*/
