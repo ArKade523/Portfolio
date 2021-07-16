@@ -72,12 +72,12 @@ a.hamburger {
   #name {
     display: block;
   }
-  div.img{
+  div.foreground div.imagecontainer div.img{
     display: block;
     margin: auto;
     width: 90%;
   }
-  div.blurb {
+  div.foreground div.imagecontainer div.blurb {
     display: block;
     float: none;
     margin: auto;
