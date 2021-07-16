@@ -99,7 +99,7 @@ p.blurb {
 }
 
 div.imagecontainer {
- display: block; 
+ display: inline-block; 
 }
 
 .body {
