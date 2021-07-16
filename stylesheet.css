@@ -73,7 +73,7 @@ div.foreground {
   position: relative;
   top: 6em;
   display: block;
-  height: 150vh;
+  height: auto;
   width: 90%;
   background-color: rgba(240, 240, 240, 0.4);
   margin: auto;
