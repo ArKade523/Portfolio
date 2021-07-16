@@ -12,11 +12,10 @@ body {
   background-color: #777;
   top: 0;
   overflow: hidden;
-  padding: 3px;
+  padding: 8px;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   z-index: 2;
-  border: 5px solid #666;
 }
 
 .nav:hover {
