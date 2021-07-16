@@ -21,7 +21,7 @@ body {
 
 .nav:hover {
   background-color: #777;
-  border-bottom: 3px solid #f0d000;
+  border-bottom: 3px solid #f08020;
 }
 .nav {
   float: right;
@@ -30,7 +30,7 @@ body {
   padding: 5px;
 }
 .current-page {
-  border-bottom: 3px solid #f0d000;
+  border-bottom: 3px solid #f08020;
 }
 .link {
   text-decoration: none;
