@@ -90,7 +90,7 @@ div.imagecontainer {
 
 div.img {
   display: inline-block;
-  width: 30%;
+  width: minmax(150px, 30%);
   height: auto;
   margin: 1em;
 }
