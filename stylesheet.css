@@ -63,7 +63,7 @@ a.hamburger {
   margin: 0px 10px;
 }
 
-@media screen and (max-width: 25em) {
+@media screen and (max-width: 875px) {
   .top-bar a:not(:first-child) {display: none;}
   .top-bar a.hamburger {
     float: right;
@@ -86,7 +86,7 @@ a.hamburger {
   } 
 }
 
-@media screen and (max-width: 25em) {
+@media screen and (max-width: 875px) {
   .top-bar.responsive {position: relative;}
   .top-bar.responsive .hamburger {
     position: absolute;
