@@ -150,7 +150,7 @@ div.img {
 .image {
   height: 100%;
   width: 100%;
-  border: 10px solid #e0e0e0;
+  border: 1vw solid #e0e0e0;
 }
 
 div.blurb {
