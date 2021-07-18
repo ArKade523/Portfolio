@@ -1,5 +1,4 @@
 body {
-  position: fixed;
   background-color: #50b6cf;
   background-image: url("images/Seattle Portrait.jpg");
   background-position: center;
@@ -121,13 +120,13 @@ p.home {
   font-size: 200%;
   margin: auto;
   font-family: "Roboto", sans-serif;
-  top: 35vh;
+  top: 33vh;
   text-align: center;
 }
 
 div.foreground {
   position: relative;
-  top: 45vh;
+  top: 40vh;
   display: block;
   height: auto;
   width: 90%;
