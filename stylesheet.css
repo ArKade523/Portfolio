@@ -107,7 +107,7 @@ a.hamburger {
 
 h2.home {
   position: relative;
-  color: #eee;
+  color: #fff;
   font-size: 400%;
   margin: auto;
   font-family: "Roboto", sans-serif;
@@ -117,7 +117,7 @@ h2.home {
 
 p.home {
   position: relative;
-  color: #eee;
+  color: #fff;
   font-size: 200%;
   margin: auto;
   font-family: "Roboto", sans-serif;
