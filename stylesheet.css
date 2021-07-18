@@ -120,13 +120,13 @@ p.home {
   font-size: 200%;
   margin: auto;
   font-family: "Roboto", sans-serif;
-  top: 33vh;
+  top: 30vh;
   text-align: center;
 }
 
 div.foreground {
   position: relative;
-  top: 40vh;
+  top: 35vh;
   display: block;
   height: auto;
   width: 90%;
