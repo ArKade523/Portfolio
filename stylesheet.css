@@ -115,6 +115,10 @@ a.hamburger {
     display: block;
     text-align: left;
   }
+  
+  .top-bar.responsive a.hamburger {
+    float: right; 
+  }
 }
 
 h2.home {
