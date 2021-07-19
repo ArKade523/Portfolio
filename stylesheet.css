@@ -116,6 +116,10 @@ a.hamburger {
     text-align: left;
   }
   
+  #contact-me {
+    float: left; 
+  }
+  
   .top-bar.responsive a.hamburger {
     float: right; 
   }
