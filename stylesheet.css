@@ -15,9 +15,9 @@ body:before {
   overflow-x: hidden;
 }
 
-body {
+/*body {
  background-color: #50b6cf; 
-}
+}*/
 
 #top-bar {
   position: fixed;
