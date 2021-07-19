@@ -48,7 +48,7 @@ body:before {
 .nav {
   float: right;
   align-text: center;
-  display: block;
+  display: inline-block;
   padding: 5px;
 }
 
