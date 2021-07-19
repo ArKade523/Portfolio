@@ -240,6 +240,7 @@ div.body p.aboutme {
   top: 35vh;
   height: 80vh;
   width: 50%;
+  min-width: 600px;
   display: block;
   margin: auto;
 }
