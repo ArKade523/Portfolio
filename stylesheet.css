@@ -121,6 +121,7 @@ a.hamburger {
   }
   
   #top-bar.responsive a.hamburger {
+    float: right;
     position: relative;
     top: -1.8em;
   }
