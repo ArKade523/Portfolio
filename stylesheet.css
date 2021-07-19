@@ -238,9 +238,9 @@ div.body p.aboutme {
 #resume {
   position: relative;
   top: 35vh;
-  height: 80vh;
+  height: 120vh;
   width: 50%;
-  min-width: 600px;
+  min-width: 710px;
   display: block;
   margin: auto;
 }
