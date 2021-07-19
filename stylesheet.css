@@ -115,13 +115,14 @@ a.hamburger {
     display: block;
     text-align: left;
   }
-  
-  #contact-me {
-    float: left; 
+
+  .top-bar.responsive #name {
+    float: none;
   }
   
-  .top-bar.responsive a.hamburger {
-    float: right; 
+  #top-bar.responsive a.hamburger {
+    position: relative;
+    top: -1.8em;
   }
 }
 
