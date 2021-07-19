@@ -78,7 +78,7 @@ a.hamburger {
 }
 
 @media screen and (max-width: 875px) {
-  #top-bar a:not(:first-child) {display: none;}
+  .top-bar a:not(:first-child) {display: none;}
   #top-bar a.hamburger {
     float: right;
     display: block;
