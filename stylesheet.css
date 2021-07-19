@@ -105,7 +105,7 @@ a.hamburger {
 }
 
 @media screen and (max-width: 875px) {
-  #top-bar.responsive {position: relative;}
+  #top-bar.responsive {position: fixed;}
 
   #top-bar.responsive a {
     float: none;
@@ -114,6 +114,7 @@ a.hamburger {
   }
 
   #top-bar.responsive #name {
+    display: block;
     float: none;
   }
   
