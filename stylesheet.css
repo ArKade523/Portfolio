@@ -127,44 +127,39 @@ a.hamburger {
 
 /* Title Text */
 
-#front-heading {
+#front-heading, #front-caption {
   position: relative;
   display: block;
   margin: auto;
   top: 40vh;
   color: #fff;
   font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+#front-heading {
   font-size: 400%;
 }
 
 #front-caption {
-  position: relative;
-  display: block;
-  margin: auto;
-  top: 40vh;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
   font-size: 200%;
+}
+
+h2.home, p.home {
+  position: relative;
+  color: #fff;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+  top: 30vh;
+  text-align: center;
 }
 
 h2.home {
-  position: relative;
-  color: #fff;
   font-size: 400%;
-  margin: auto;
-  font-family: "Roboto", sans-serif;
-  top: 30vh;
-  text-align: center;
 }
 
 p.home {
-  position: relative;
-  color: #fff;
   font-size: 200%;
-  margin: auto;
-  font-family: "Roboto", sans-serif;
-  top: 30vh;
-  text-align: center;
 }
 
 /* Main body of website */
