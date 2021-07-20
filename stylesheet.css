@@ -22,7 +22,7 @@ body:before {
 #top-bar {
   position: fixed;
   height: auto;
-  width: 100%;
+  width: 99%;
   background-color: rgba(112, 112, 112, 0.8);
   top: 0;
   left: 0;
