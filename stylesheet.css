@@ -268,7 +268,7 @@ div.foreground-desmos {
 
 iframe.desmos {
   position: relative;
-  width: 40%;
+  width: 40vw;
   height: auto;
 }
 
@@ -278,6 +278,6 @@ iframe.desmos {
   } 
   
   iframe.desmos {
-    width: 90%; 
+    width: 90vw; 
   }
 }
