@@ -207,8 +207,8 @@ div.imagecontainer {
 
 div.img {
   display: inline-block;
-  width: 35%;
-  min-width: 250px;
+  width: 25vw;
+  min-width: 200px;
   height: auto;
   margin: 1em;
 }
@@ -222,7 +222,7 @@ div.img {
 div.blurb {
   display: inline-block;
   height: 100%;
-  width: 45vw;
+  width: 50vw;
   float: right;
   padding: 1em;
   background-color: rgba(0, 0, 0, 0);
