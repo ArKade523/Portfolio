@@ -247,3 +247,37 @@ canvas {
  display: block;
  margin: 0 auto;
 }
+
+/* Desmos */
+
+div.foreground-desmos {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 10px;
+  position: relative;
+  top: 35vh;
+  height: auto;
+  width: 90%;
+  background-color: rgba(80, 182, 207, 0.7);
+  margin: auto;
+  padding: 1em 2em 1em 2em;
+  border-radius: 1em;
+}
+
+iframe.desmos {
+  position: relative;
+  width: 40%;
+  height: auto;
+}
+
+@media screen and (max-width: 1150px) {
+  div.foreground-desmos {
+    grid-template-columns: 100%;
+  } 
+  
+  iframe.desmos {
+    width: 90%; 
+  }
+}
