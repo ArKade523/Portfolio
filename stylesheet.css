@@ -228,6 +228,15 @@ div.blurb {
   margin: 1em;
 }
 
+a.socials {
+  position: absolute;
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  bottom: 0;
+}
+
 /* Resume */
 
 #resume {
