@@ -1,3 +1,5 @@
+/*Background Image*/
+
 body:before {
   content: "";
   display: block;
@@ -15,9 +17,7 @@ body:before {
   overflow-x: hidden;
 }
 
-/*body {
- background-color: #50b6cf; 
-}*/
+/*Navigation Bar*/
 
 #top-bar {
   position: fixed;
@@ -125,6 +125,8 @@ a.hamburger {
   }
 }
 
+/* Title Text */
+
 h2.home {
   position: relative;
   color: #fff;
@@ -145,6 +147,8 @@ p.home {
   text-align: center;
 }
 
+/* Main body of website */
+
 div.foreground {
   position: relative;
   top: 35vh;
@@ -156,6 +160,12 @@ div.foreground {
   padding: 1em 2em 1em 2em;
   justify-content: center;
   border-radius: 1em;
+}
+
+div.intro {
+  display: block;
+  color: #e0e0e0;
+  font-family: "Roboto", sans-serif;
 }
 
 div.imagecontainer {
@@ -192,49 +202,7 @@ div.blurb {
   margin: 1em;
 }
 
-/*div.body p.aboutme, h2.aboutme {
-  font-family: "Roboto", sans-serif;
-  color: #e0e0e0;
-  padding: 1% 5%;
-}
-
-div.body p, h1, h3 {
-  position: relative;
-  top: 50px;
-  left: 20px;
-  font-family: "Roboto", sans-serif;
-}*/
-
-div.body.aboutme {
-  position: relative;
-  display: grid;
-  justify-content: center;
-  top: 40px;
-  padding: 10px;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 5% auto;
-  grid-gap: 10px;
-}
-
-div.body h2.aboutme {
-  position: relative;
-  left: 17px;
-  color: #e0e0e0;
-}
-
-.portrait.aboutme {
-  height: 250px;
-  width: auto;
-  position: relative;
-  margin: 18px;
-  top: 2px;
-  grid-row: 1 / 3;
-  grid-column: 2;
-}
-
-div.body p.aboutme {
-  color: #e0e0e0
-}
+/* Resume */
 
 #resume {
   position: relative;
@@ -246,13 +214,7 @@ div.body p.aboutme {
   margin: auto;
 }
 
-.game-title {
- font-family: "Roboto", sans-serif;
- color: #ddd;
- display: flex;
- justify-content: center;
- margin: 30px auto;
-}
+/* Game Canvas */
 
 canvas {
  background-color: #eee;
