@@ -127,6 +127,26 @@ a.hamburger {
 
 /* Title Text */
 
+#front-heading {
+  position: relative;
+  display: block;
+  margin: auto;
+  top: 40vh;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 400%;
+}
+
+#front-caption {
+  position: relative;
+  display: block;
+  margin: auto;
+  top: 40vh;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 200%;
+}
+
 h2.home {
   position: relative;
   color: #fff;
