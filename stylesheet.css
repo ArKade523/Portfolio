@@ -170,6 +170,15 @@ div.intro {
   margin-bottom: 1em;
 }
 
+div.intro a {
+  color: #ffaa20;
+  text-decoration: none;
+}
+
+div.intro a:hover {
+  text-decoration: underline;
+}
+
 div.imagecontainer {
   display: block;
   height: auto;
