@@ -164,8 +164,10 @@ div.foreground {
 
 div.intro {
   display: block;
-  color: #e0e0e0;
+  color: #eee;
   font-family: "Roboto", sans-serif;
+  font-size: 1.4em;
+  margin-bottom: 1em;
 }
 
 div.imagecontainer {
