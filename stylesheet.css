@@ -232,17 +232,22 @@ div.socials {
   position: absolute;
   width: auto;
   height: auto;
-  margin: auto;
   bottom: 0;
 }
 
-div.socials a {
+div.socials div {
   display: block;
   margin: auto;
-  height: 30px;
-  width: 30px;
+  height: auto;
+  width: auto;
 }
 
+div.socials div a {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
 /* Resume */
 
 #resume {
