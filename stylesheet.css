@@ -228,13 +228,19 @@ div.blurb {
   margin: 1em;
 }
 
-a.socials {
+div.socials {
   position: absolute;
-  display: block;
-  height: 50px;
-  width: 50px;
+  width: auto;
+  height: auto;
   margin: auto;
   bottom: 0;
+}
+
+div.socials a {
+  display: block;
+  margin: auto;
+  height: 30px;
+  width: 30px;
 }
 
 /* Resume */
