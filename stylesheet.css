@@ -240,6 +240,7 @@ div.socials div {
   margin: auto;
   height: auto;
   width: auto;
+  text-align: center;
 }
 
 div.socials div a {
