@@ -102,6 +102,11 @@ a.hamburger {
   div.foreground {
     left: -1vw; 
   }
+  
+  #resume {
+    height: 103vw;
+    width: 80vw;
+  }
 }
 
 @media screen and (max-width: 875px) {
@@ -259,6 +264,8 @@ div.socials div a {
   top: 0;
   display: block;
   margin: auto;
+  height: 64.5vw;
+  width: 50vw;
 }
 
 #resume-download {
