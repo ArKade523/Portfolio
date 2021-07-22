@@ -103,7 +103,7 @@ a.hamburger {
     left: -1vw; 
   }
   
-  #resume {
+  #resume.link {
     height: 103vw;
     width: 80vw;
   }
