@@ -257,9 +257,15 @@ div.socials div a {
 #resume {
   position: relative;
   top: 35vh;
-  height: 120vh;
-  width: 50%;
-  min-width: 710px;
+  height: 792px;
+  width: 612px;
+  /*min-width: 710px;*/
+  display: block;
+  margin: auto;
+}
+
+#resume-download {
+  position: relative;
   display: block;
   margin: auto;
 }
