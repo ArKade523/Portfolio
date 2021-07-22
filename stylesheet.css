@@ -256,10 +256,7 @@ div.socials div a {
 
 #resume {
   position: relative;
-  top: 35vh;
-  height: 792px;
-  width: 612px;
-  /*min-width: 710px;*/
+  top: 0;
   display: block;
   margin: auto;
 }
@@ -267,7 +264,18 @@ div.socials div a {
 #resume-download {
   position: relative;
   display: block;
-  margin: auto;
+  margin: 15px;
+  text-align: center;
+}
+
+#resume-download a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+#resume-download a:hover {
+  text-decoration: underline;
 }
 
 /* Game Canvas */
