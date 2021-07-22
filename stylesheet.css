@@ -327,3 +327,10 @@ iframe.desmos {
     height: 90vw;
   }
 }
+
+/* Misc. */
+
+::selection {
+  color: white;
+  background: #50b6cf;
+}
