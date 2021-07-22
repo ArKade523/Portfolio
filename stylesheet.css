@@ -291,8 +291,8 @@ div.foreground-desmos {
 
 iframe.desmos {
   position: relative;
-  width: 47vw;
-  height: 47vw;
+  width: 44vw;
+  height: 44vw;
 }
 
 @media screen and (max-width: 1150px) {
