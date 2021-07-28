@@ -39,6 +39,16 @@ body:before {
   transition-duration: 250ms;
 }
 
+.nav:after {
+  border-bottom: solid 3px #50b6cf;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out; 
+}
+
+.nav:hover:after { 
+  transform: scaleX(1); 
+}
+
 .nav {
   float: right;
   align-text: center;
