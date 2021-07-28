@@ -329,6 +329,26 @@ iframe.desmos {
   }
 }
 
+/* Projects */
+
+div.project-container {
+  display: block;
+  margin: auto;
+  width: 90vw;
+  height: 25vh;
+  transition-duration: 500ms;
+}
+
+div.project-container:first-of-type {
+  background-color: #ff7b40;
+  background-image: linear-gradient(rgba(255, 64, 16, 0.7), rgba(255, 124, 64, 0.7), rgba(255, 64, 16, 0.7)); 
+}
+
+div.project-container:nth-of-type(2) {
+  background-color: #ff7b40;
+  background-image: linear-gradient(rgba(255, 64, 16, 0.7), rgba(255, 124, 64, 0.7), rgba(255, 64, 16, 0.7)); 
+}
+
 /* Misc. */
 
 ::selection {
