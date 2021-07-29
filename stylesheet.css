@@ -387,6 +387,7 @@ div.project-container {
   transition-duration: 500ms;
   background-color: rgba(80, 182, 207, 0.7);
   border-radius: 5px;
+  text-align: center;
 }
 
 div.project-container:hover {
@@ -397,6 +398,14 @@ div.project-container:hover {
 div.project-container div.img img {
   width: 25vw;
   height: auto;
+}
+
+.project-title {
+  color: #fff;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: large;
+  text-decoration: none;
 }
 
 /* Misc. */
