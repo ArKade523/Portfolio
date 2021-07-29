@@ -246,6 +246,7 @@ div.blurb {
   font-size: 1.2em;
   color: white;
   margin: 1em;
+  text-align: left;
 }
 
 div.socials {
