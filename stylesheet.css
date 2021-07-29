@@ -401,6 +401,8 @@ div.project-container div.img img {
 }
 
 .project-title {
+  display: block;
+  margin: auto;
   color: #fff;
   text-align: center;
   font-family: 'Roboto', sans-serif;
