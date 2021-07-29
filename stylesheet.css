@@ -294,6 +294,7 @@ div.socials div a:hover {
   display: block;
   margin: 15px;
   text-align: center;
+  width: auto;
   padding: 10px;
   border-radius: 3px;
   background-color: #50b6cf;
@@ -307,6 +308,8 @@ div.socials div a:hover {
 
 #resume-download a:hover {
   text-decoration: underline;
+  transition-duration: 250ms;
+  transform: scale(1.1);
 }
 
 /* Game Canvas */
