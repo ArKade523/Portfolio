@@ -362,16 +362,13 @@ div.project-container {
   width: 90vw;
   height: auto;
   transition-duration: 500ms;
+  background-color: rgba(80, 182, 207, 0.7);
+  border-radius: 5px;
 }
 
-div.project-container:first-of-type {
-  background-color: #ff7b40;
-  background-image: linear-gradient(rgba(255, 64, 16, 0.7), rgba(255, 124, 64, 0.7), rgba(255, 64, 16, 0.7)); 
-}
-
-div.project-container:nth-of-type(2) {
-  background-color: #ff7b40;
-  background-image: linear-gradient(rgba(255, 64, 16, 0.7), rgba(255, 124, 64, 0.7), rgba(255, 64, 16, 0.7)); 
+div.project-container:hover {
+  transition-duration: 500ms;
+  transform: scale(1.1);
 }
 
 div.project-container div.img img {
