@@ -39,6 +39,8 @@ body:before {
 }
 
 .nav:after {
+  display: block;
+  content: '';
   border-bottom: solid 3px #50b6cf;  
   transform: scaleX(0);  
   transition: transform 250ms ease-in-out; 
