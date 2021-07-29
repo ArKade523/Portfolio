@@ -37,7 +37,7 @@ body:before {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.nav:after {
+.inactive:after {
   display: block;
   content: '';
   border-bottom: solid 3px #50b6cf;  
@@ -45,7 +45,7 @@ body:before {
   transition: transform 250ms ease-in-out; 
 }
 
-.nav:hover:after { 
+.inactive:hover:after { 
   transform: scaleX(1); 
 }
 
@@ -56,9 +56,10 @@ body:before {
   padding: 5px;
 }
 
-.current-page {
+.current-page:after {
   display: block;
   content: '';
+  transform: scaleX(1);
   border-bottom: solid 3px #50b6cf;  
 }
 
