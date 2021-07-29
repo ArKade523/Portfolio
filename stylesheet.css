@@ -270,7 +270,14 @@ div.socials div a {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 5px;
+  transition-duration: 250ms;
 }
+
+div.socials div a:hover {
+  transform: scale(1.1);
+  transition-duration: 250ms;
+}
+
 /* Resume */
 
 #resume {
@@ -287,6 +294,9 @@ div.socials div a {
   display: block;
   margin: 15px;
   text-align: center;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #50b6cf;
 }
 
 #resume-download a {
@@ -350,7 +360,7 @@ div.project-container {
   display: block;
   margin: auto;
   width: 90vw;
-  height: 25vh;
+  height: auto;
   transition-duration: 500ms;
 }
 
