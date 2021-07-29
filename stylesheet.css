@@ -193,6 +193,7 @@ div.foreground {
   margin: auto;
   padding: 1em 2em 1em 2em;
   justify-content: center;
+  text-align: center;
   border-radius: 1em;
 }
 
@@ -292,9 +293,9 @@ div.socials div a:hover {
 #resume-download {
   position: relative;
   display: block;
-  margin: 15px;
+  margin: auto;
   text-align: center;
-  width: 5em;
+  width: 10em;
   padding: 10px;
   border-radius: 3px;
   background-color: #50b6cf;
@@ -310,10 +311,6 @@ div.socials div a:hover {
   color: #fff;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-}
-
-#resume-download a:hover {
-  text-decoration: underline;
 }
 
 /* Game Canvas */
