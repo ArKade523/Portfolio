@@ -401,3 +401,12 @@ div.project-container div.img img {
   color: white;
   background: #50b6cf;
 }
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome and Safari */
+}
+
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
