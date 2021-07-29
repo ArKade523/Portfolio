@@ -361,7 +361,7 @@ iframe.desmos {
 
 div.project-container {
   position: relative;
-  top: 25vh;
+  top: 35vh;
   display: block;
   margin: auto;
   width: 90vw;
@@ -377,7 +377,7 @@ div.project-container:hover {
 }
 
 div.project-container div.img img {
-  width: 35vw;
+  width: 25vw;
   height: auto;
 }
 
