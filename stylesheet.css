@@ -68,6 +68,19 @@ body:before {
   color: #e0e0e0;
 }
 
+.doc-link {
+  text-decoration: none;
+  background-color: #50b6cf;
+  padding: 1px;
+  border-radius: 3px;
+  transition-duration: 250ms;
+}
+
+.doc-link:hover {
+  transition-duration: 250ms;
+  transform: scale(1.05);
+}
+
 #logo {
   height: 30px;
   width: auto;
