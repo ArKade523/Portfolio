@@ -294,6 +294,7 @@ div.socials div a:hover {
   position: relative;
   display: block;
   margin: auto;
+  margin-top: 10px;
   text-align: center;
   width: 10em;
   padding: 10px;
