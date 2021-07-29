@@ -374,7 +374,7 @@ div.project-container {
 
 div.project-container:hover {
   transition-duration: 500ms;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 div.project-container div.img img {
