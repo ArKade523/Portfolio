@@ -269,6 +269,15 @@ div.imagecontainer div.img img {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+div.foreground div.misc-img img {
+  width: 25vw;
+  height: auto;
+  display: block;
+  border: 1vw solid #fff;
+  margin-bottom: 3em;
+  background-color: rgba(255, 255, 255, 0.3); 
+}
+
 .image {
   height: 100%;
   width: 100%;
