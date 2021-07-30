@@ -457,4 +457,7 @@ body {
 
 #bungee {
   font-family: 'Bungee', 'Roboto', sans-serif; 
+  font-size: small;
+  padding-top: 0;
+  padding-bottom: 0;
 }
