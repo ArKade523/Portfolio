@@ -263,16 +263,16 @@ div.img {
 div.imagecontainer div.img img {
   width: 25vw;
   height: auto;
-  display: inline-block;
+  display: block;
   border: 1vw solid #fff;
   margin-bottom: 3em;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
 div.foreground div.misc-img img {
-  width: 25vw;
+  width: 40vw;
   height: auto;
-  display: block;
+  display: inline-block;
   border: 1vw solid #fff;
   margin-bottom: 3em;
   background-color: rgba(255, 255, 255, 0.3); 
