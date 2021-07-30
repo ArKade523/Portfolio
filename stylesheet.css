@@ -266,6 +266,7 @@ div.imagecontainer div.img img {
   display: block;
   border: 1vw solid #fff;
   margin-bottom: 3em;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .image {
