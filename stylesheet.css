@@ -403,6 +403,8 @@ div.project-container:hover {
 div.project-container div.img img {
   width: 25vw;
   height: auto;
+  display: block;
+  border: .8em solid #fff;
 }
 
 .project-title {
