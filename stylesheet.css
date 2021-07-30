@@ -118,14 +118,17 @@ a.hamburger {
     float: right;
     display: block;
   }
+  
   #name {
     display: block;
   }
+  
   div.foreground div.imagecontainer div.img{
     display: block;
     margin: auto;
     width: 90%;
   }
+  
   div.foreground div.imagecontainer div.blurb {
     display: block;
     float: none;
@@ -141,6 +144,14 @@ a.hamburger {
   #resume.link {
     height: 103vw;
     width: 80vw;
+  }
+  
+  div.imagecontainer div.img img {
+    width: 90%; 
+  }
+  
+  div.project-container div.img img {
+    width: 90%; 
   }
 }
 
@@ -253,14 +264,14 @@ div.imagecontainer div.img img {
   width: 25vw;
   height: auto;
   display: block;
-  border: .8em solid #fff;
+  border: 1vw solid #fff;
   margin-bottom: 3em;
 }
 
 .image {
   height: 100%;
   width: 100%;
-  border: .8em solid #fff;
+  border: 1vw solid #fff;
 }
 
 div.blurb {
@@ -412,7 +423,7 @@ div.project-container div.img img {
   width: 25vw;
   height: auto;
   display: block;
-  border: .8em solid #fff;
+  border: 1vw solid #fff;
   margin-bottom: 3em;
 }
 
