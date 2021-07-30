@@ -249,10 +249,18 @@ div.img {
   margin: 1em;
 }
 
+div.imagecontainer div.img img {
+  width: 25vw;
+  height: auto;
+  display: block;
+  border: .8em solid #fff;
+  margin-bottom: 3em;
+}
+
 .image {
   height: 100%;
   width: 100%;
-  border: 1em solid #fff;
+  border: .8em solid #fff;
 }
 
 div.blurb {
