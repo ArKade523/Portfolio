@@ -453,3 +453,7 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+#bungee {
+  font-family: 'Bungee', 'Roboto', sans-serif; 
+}
