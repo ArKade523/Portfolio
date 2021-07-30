@@ -85,7 +85,8 @@ body:before {
 
 .doc-link:hover {
   transition-duration: 250ms;
-  color: #60c6df;
+  color: #fff;
+  background-color: #50b6cf;
 }
 
 #logo {
