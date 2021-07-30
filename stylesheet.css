@@ -74,19 +74,18 @@ body:before {
 
 .doc-link {
   text-decoration: none;
-  background-color: #50b6cf;
+  color: #50b6cf;
   padding: 1px 5px 1px 5px;
   border-radius: 3px;
   transition-duration: 250ms;
   height: auto;
   width: auto;
-  color: #fff;
+  background-color: #fff;
 }
 
 .doc-link:hover {
   transition-duration: 250ms;
-  transform: scale(1.05);
-  background-color: #60c6df;
+  color: #60c6df;
 }
 
 #logo {
