@@ -405,6 +405,7 @@ div.project-container div.img img {
   height: auto;
   display: block;
   border: .8em solid #fff;
+  margin-bottom: 3em;
 }
 
 .project-title {
