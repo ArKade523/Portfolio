@@ -252,7 +252,7 @@ div.img {
 .image {
   height: 100%;
   width: 100%;
-  border: 1vw solid #e0e0e0;
+  border: 1em solid #fff;
 }
 
 div.blurb {
@@ -262,10 +262,10 @@ div.blurb {
   float: right;
   padding: 1em;
   background-color: rgba(0, 0, 0, 0);
-  box-shadow: -1vw 1vw #e0e0e0;
+  box-shadow: -1vw 1vw #fff;
   font-family: "Roboto", sans-serif;
   font-size: 1.2em;
-  color: white;
+  color: #fff;
   margin: 1em;
   text-align: left;
 }
@@ -292,7 +292,7 @@ div.socials div a {
   width: 50px;
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   transition-duration: 250ms;
 }
 
