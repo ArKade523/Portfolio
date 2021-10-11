@@ -55,7 +55,6 @@ body:before {
 
 .nav {
   float: right;
-  align-text: center;
   display: inline-block;
   padding: 5px;
 }
@@ -448,6 +447,23 @@ div.project-container div.img img {
   font-weight: bold;
 }
 
+@media screen and (max-width: 1150px) {
+  div.project-container div.img img{
+    width: 60vw;
+  }
+  
+  div.project-container div.img {
+    margin-right: 45%;
+  }
+
+  div.project-container div.blurb {
+    display: none;
+  }
+
+  div.img {
+    min-width: 0px;
+  }
+}
 /* Misc. */
 
 ::selection {
