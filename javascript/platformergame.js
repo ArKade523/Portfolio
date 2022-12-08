@@ -88,12 +88,8 @@ function drawBack() {
 }
 
 function drawLevel() {
-  if (level === 1) {
-    levelOne();
-  }
-
-  if (level === 2) {
-    levelTwo();
+  if (level <= 2) {
+    levelParser(levels[level - 1]);
   }
   
   if (level === 3) {
