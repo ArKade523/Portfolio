@@ -1,4 +1,6 @@
-import { levels, levelParser } from './levels.js';
+import levels from './levels.js';
+import levelParser from './levels.js';
+
 
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
