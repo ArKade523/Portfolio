@@ -6,11 +6,11 @@ const levels = [
         level: 1,
 
         floors: {
-            parameters: [[0, 700], [950, 500], [500, 500], [3200, 500]]
+            parameters: [[0, 700], [950, 500], [2050, 500], [3200, 500]]
         },
 
         platforms: {
-            parameters: [[785, 550, 80], [1485, 500, 80], [1685, 500, 80],
+            parameters: [[785, 550, 80], [1485, 550, 80], [1685, 500, 80],
                         [1885, 550, 80], [2585, 550, 80], [2785, 475, 80],
                         [2585, 375, 80], [2785, 300, 80]]
         },
@@ -37,13 +37,16 @@ const levels = [
 /* -- Level Parser -- */
 
 function levelParser (levelParams) {
-    for (let i in levelParams.floors.parameters)
-        drawFloor(i[0], i[1]);
-
-    for (let i in levelParams.platforms.parameters)
-        drawPlatform(i[0], i[1], i[2]);
+    const floors = levelParams.floors.parameters;
+    const platforms = levelParams.platforms.parameters;
 
     drawFlag(levelParams.winDist);
+
+    for (let i in floors)
+        drawFloor(floors[i][0], floors[i][1]);
+
+    for (let i in platforms)
+        drawPlatform(platforms[i][0], platforms[i][1], platforms[i][2]);
 
     if (x > screenX + levelParams.winDist) {
         win();
