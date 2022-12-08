@@ -1,14 +1,15 @@
+import { levels, levelParser } from './levels.js';
+
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const inertia = 0.98;
-const pi = Math.PI;
 
 // Changing Global Variables
 let x = canvas.width / 5;
 let y = canvas.height - 75;
 let dx = 0;
 let dy = 0;
-let angle = 0;
+angle = 0;
 let cloudPos = [500 * Math.random() + 50, 10 * Math.random(), 5 * Math.random(), 8 * Math.random(), 500 * Math.random() + 50, 0.5 * Math.random() + 0.4, 0.5 * Math.random() + 0.4];
 let keys = {
   left: false,
@@ -88,33 +89,13 @@ function drawBack() {
 }
 
 function drawLevel() {
-  if (level <= 2) {
+  if (level <= 7) {
     levelParser(levels[level - 1]);
   }
-  
-  if (level === 3) {
-    drawHouse(-300);
-    levelThree();
-  }
 	
-  if (level === 4) {
-    levelFour();	  
-  }
-	
-  if (level === 5) {
-    levelFive();	  
-  }
-  
-  if (level === 6) {
-    levelSix();
-  }
-  
-  if (level === 7) {
-    levelSeven();
-  }
-	
-  if (level === 8) {
-    levelEight();
+  // hard-coded for now
+  if (level === 8 || level === 9) {
+    levelParser(levels[7]);
   }
 }
 
@@ -190,7 +171,7 @@ function levelFour () {
   drawFloor(0, 700);
   drawFloor(1700, 600);
   
-  movePlatform(drawPlatform, 400 * Math.cos(angle + pi / 2), 1150, 0, 550, 100);
+  moveObject(drawPlatform, 400 * Math.cos(angle + pi / 2), 1150, 0, 550, 100);
   drawBouncingPlatform(2400, 550, 80);
   drawBouncingPlatform(2600, 400, 80);
   drawBouncingPlatform(2800, 250, 80);
@@ -208,11 +189,11 @@ function levelFive () {
   drawFloor(0, 700);
   drawFloor(1700, 600);
   
-  movePlatform(drawBouncingPlatform, 200 * Math.cos(2 * (angle + pi / 2)), 925, 0, 550, 75);
-  movePlatform(drawBouncingPlatform, -200 * Math.cos(2 * (angle + pi / 2)), 1375, 0, 550, 75);
-  movePlatform(drawBouncingPlatform, 50 * Math.cos(2 * (angle + pi / 2)), 2400, 0, 550, 80);
-  movePlatform(drawBouncingPlatform, 50 * Math.cos(2 * (angle + pi / 2)), 2600, 0, 550, 80);
-  movePlatform(drawBouncingPlatform, 100 * Math.cos(4 * (angle + pi / 2)), 2800, 0, 550, 80);
+  moveObject(drawBouncingPlatform, 200 * Math.cos(2 * (angle + pi / 2)), 925, 0, 550, 75);
+  moveObject(drawBouncingPlatform, -200 * Math.cos(2 * (angle + pi / 2)), 1375, 0, 550, 75);
+  moveObject(drawBouncingPlatform, 50 * Math.cos(2 * (angle + pi / 2)), 2400, 0, 550, 80);
+  moveObject(drawBouncingPlatform, 50 * Math.cos(2 * (angle + pi / 2)), 2600, 0, 550, 80);
+  moveObject(drawBouncingPlatform, 100 * Math.cos(4 * (angle + pi / 2)), 2800, 0, 550, 80);
   
   drawFlag(3600);
   drawFloor(3200, 500);
@@ -227,14 +208,14 @@ function levelSix () {
   drawFloor(0, 700);
   drawFloor(2500, 500);
   
-  movePlatform(drawPlatform, 200 * Math.cos(2 * (angle + pi / 2)), 900, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100);
-  movePlatform(drawPlatform, -200 * Math.cos(2 * (angle + pi / 2)), 1450, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100);
-  movePlatform(drawPlatform, 200 * Math.cos(2 * (angle + pi / 2)), 2000, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100);
+  moveObject(drawPlatform, 200 * Math.cos(2 * (angle + pi / 2)), 900, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100);
+  moveObject(drawPlatform, -200 * Math.cos(2 * (angle + pi / 2)), 1450, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100);
+  moveObject(drawPlatform, 200 * Math.cos(2 * (angle + pi / 2)), 2000, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100);
   
   drawBouncingPlatform(3100, 550, 100);
   drawBouncingPlatform(3100, 400, 100);
   
-  movePlatform(drawPlatform, 200 * Math.cos(2 * (angle + pi / 2)), 3600, -200 * Math.abs(Math.sin(2 * (angle + pi / 2))), 450, 100);
+  moveObject(drawPlatform, 200 * Math.cos(2 * (angle + pi / 2)), 3600, -200 * Math.abs(Math.sin(2 * (angle + pi / 2))), 450, 100);
   
   drawFlag(4600);
   drawFloor(4200, 500);
@@ -250,18 +231,18 @@ function levelSeven () {
   drawFloor(1400, 500);
   
   drawStickyPlatform(850, 550, 100);
-  movePlatform(drawPlatform, 0, 850, -200 * Math.sin(2 * (angle + pi / 2)), 550, 100);
-  movePlatform(drawDeadly, 0, 1150, -200 * Math.sin(2 * (angle)), 550, 100);
+  moveObject(drawPlatform, 0, 850, -200 * Math.sin(2 * (angle + pi / 2)), 550, 100);
+  moveObject(drawDeadly, 0, 1150, -200 * Math.sin(2 * (angle)), 550, 100);
   drawPlatform(1150, 550, 100);
-  movePlatform(drawStickyPlatform, 0, 2000, -200 * Math.sin(2 * (angle)), 450, 100);
+  moveObject(drawStickyPlatform, 0, 2000, -200 * Math.sin(2 * (angle)), 450, 100);
   drawDeadly(2150, 450, 50);
-  movePlatform(drawStickyPlatform, 0, 2250, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100);
+  moveObject(drawStickyPlatform, 0, 2250, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100);
   drawDeadly(2400, 450, 50);
-  movePlatform(drawStickyPlatform, 0, 2500, -200 * Math.sin(2 * (angle)), 450, 100);
+  moveObject(drawStickyPlatform, 0, 2500, -200 * Math.sin(2 * (angle)), 450, 100);
   drawDeadly(2650, 450, 50);
-  movePlatform(drawStickyPlatform, 0, 2750, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100);
+  moveObject(drawStickyPlatform, 0, 2750, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100);
   drawFloor(3000, 500);
-  movePlatform(drawPlatform, 200 * Math.cos(2 * (angle + pi / 2)), 3700, 0, 550, 75);
+  moveObject(drawPlatform, 200 * Math.cos(2 * (angle + pi / 2)), 3700, 0, 550, 75);
   drawDeadly(3700, 525, 50);
   
   drawFlag(4600);
@@ -278,7 +259,7 @@ function levelEight () {
   
   drawStickyPlatform(850, 550, 100);
   drawDeadly(800, 475, 50);
-  movePlatform(drawPlatform, 0, 975, -200 * Math.sin(2 * (angle)), 400, 100);
+  moveObject(drawPlatform, 0, 975, -200 * Math.sin(2 * (angle)), 400, 100);
   drawDeadly(950, 285, 50);
   drawDeadly(1000, 285, 50);
   drawDeadly(1050, 285, 50);
@@ -303,14 +284,14 @@ function levelEight () {
     drawDeadly(2000, 525, 50);
 
     drawFloor(1849, 152);
-    movePlatform(drawBouncingPlatform, 200 * Math.cos(2 * (angle)), 2350, 0, 550, 100);
+    moveObject(drawBouncingPlatform, 200 * Math.cos(2 * (angle)), 2350, 0, 550, 100);
   } else if (angle > 3 * pi / 2) {
-    movePlatform(drawStickyPlatform, 200 * Math.cos(2 * (angle)), 2350, 0, 550, 100);
+    moveObject(drawStickyPlatform, 200 * Math.cos(2 * (angle)), 2350, 0, 550, 100);
   }
   drawDeadly(2600, 500, 100);
   drawDeadly(2650, 500, 100);
   drawDeadly(2700, 500, 100);
-  movePlatform(drawStickyPlatform, 0, 2850, -50 * Math.sin(2 * (angle)), 550, 100);
+  moveObject(drawStickyPlatform, 0, 2850, -50 * Math.sin(2 * (angle)), 550, 100);
   drawDeadly(3100, 575, 50);
   drawDeadly(3150, 575, 50);
   drawDeadly(3200, 575, 50);
@@ -360,7 +341,7 @@ function drawBouncingPlatform(xcor, ycor, width) {
   }
 }
 
-function movePlatform(type, moveX, xcor, moveY, ycor, width) {
+function moveObject(type, moveX, xcor, moveY, ycor, width) {
   xcor += moveX;
   ycor += moveY;
   type(xcor, ycor, width);
