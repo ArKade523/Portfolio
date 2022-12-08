@@ -207,16 +207,16 @@ export const levels = [
         movingObjects: {
             parameters: [{
                 type: "platform",
-                parameters: [200 * Math.cos(angle + pi / 2), 925, 0, 550, 75]
+                parameters: [200 * Math.cos(angle + pi / 2), 900, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100]
             }, {
                 type: "platform",
-                parameters: [-200 * Math.cos(angle + pi / 2), 1375, 0, 550, 75]
+                parameters: [-200 * Math.cos(angle + pi / 2), 1450, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100]
             }, {
                 type: "platform",
-                parameters: [200 * Math.cos(angle + pi / 2), 2400, 0, 550, 80]
+                parameters: [200 * Math.cos(angle + pi / 2), 2000, -200 * Math.sin(2 * (angle + pi / 2)), 450, 100]
             }, {
                 type: "platform",
-                parameters: [200 * Math.cos(angle + pi / 2), 2600, 0, 550, 80]
+                parameters: [200 * Math.cos(angle + pi / 2), 3600, -200 * Math.abs(Math.sin(2 * (angle + pi / 2))), 450, 100]
             } 
             ]
         },
@@ -229,15 +229,15 @@ export const levels = [
         level: 7,
 
         floors: {
-            parameters: [[0, 700], [1400, 500], [4200, 500]]
+            parameters: [[0, 700], [1400, 500], [3000, 500], [4200, 500]]
         },
 
         platforms: {
-            parameters: []
+            parameters: [[1150, 550, 100]]
         },
 
         bouncingPlatforms: {
-            parameters: [[3100, 550, 100], [3100, 400, 100]]
+            parameters: []
         },
 
         stickyPlatforms: {
