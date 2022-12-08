@@ -539,8 +539,8 @@ function drawLife(xcor, ycor, i) {
 		ctx.closePath();
   	
   	if (x >= xcor - 10 && x <= xcor + 10 && y >= ycor - 10 && y <= ycor + 20 && !used[i]) {
-  		lives+=3;
-      		used[i] = true;
+  	  lives += 3;
+      used[i] = true;
   	}
   }
 }
@@ -623,7 +623,6 @@ function win() {
 
 // Main draw function
 function draw() {
-  window.requestAnimationFrame(draw);
   if (!dead && !pause && !splash) {
     angle += 0.01;
     if (angle >= Math.PI * 2) {
@@ -678,4 +677,4 @@ function draw() {
   document.addEventListener("keyup", keyup);
 }
 
-draw();
+setInterval(draw, 1000 / 60);
