@@ -337,7 +337,7 @@ div.socials div a:hover {
   display: block;
   margin: auto;
   height: 115vh;
-  width: 50vw;
+  width: 100%;
 }
 
 #resume-download {
