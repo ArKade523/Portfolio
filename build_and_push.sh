@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Run the Svelte build command
-npm run build
-
 # Navigate to the build directory
 cd build || exit
 
@@ -12,10 +9,14 @@ if [ ! -d ".git" ]; then
   git remote add origin git@github.com:ArKade523/Portfolio.git
 fi
 
+git checkout -b gh-pages
+
+git fetch
+
 # Add, commit, and push the changes
 git add .
 git commit -m "Automated build commit"
-git push origin main  # Replace with your branch name if it's not 'main'
+git push origin gh-pages --force
 
 # Navigate back to the root project directory
 cd ..

@@ -70,10 +70,10 @@
 				<h1>Work Experience</h1>
 			</div>
 			<div class="content-grid">
-				<Card class="card">
+				<Card class="card" href="https://www.jpl.nasa.gov/missions/cadre", target="_blank">
 					<img slot="image" class="card-image" src={nasa} alt="NASA Logo" />
 					<span slot="date" style="color:#444; font-size: 1rem;">Summer 2023</span>
-					<h3 slot="heading" style="color: #111">Software Engineering Internship</h3>
+					<h2 slot="heading" style="color: #111">Software Engineering Internship</h2>
 					<div slot="text">
 						<span class="skill">C++</span>
 						<span class="skill">F Prime</span>
@@ -88,14 +88,14 @@
 					</Stat>
 					<Stat slot="stat3">
 						<div slot="value" class="stat-value">NASA-JPL</div>
-						<div slot="type" class="stat-type">Company</div>
+						<div slot="type" class="stat-type">Employer</div>
 					</Stat>
 					
 				</Card>
 				<Card class="card">
 					<img slot="image" class="card-image" src={usu} alt="USU Logo" style="width: 76%" />
 					<span slot="date" style="color:#444; font-size: 1rem;">February 2022 - Present</span>
-					<h3 slot="heading" style="color: #111">IT Administrator</h3>
+					<h2 slot="heading" style="color: #111">IT Administrator</h2>
 					<div slot="text">
 						<span class="skill">Servers</span>
 						<span class="skill">Web Design</span>
@@ -117,7 +117,7 @@
 				<Card class="card">
 					<img slot="image" class="card-image gas" src={gas} alt="GAS Logo"/>
 					<span slot="date" style="color:#444; font-size: 1rem;">January 2023 - Present</span>
-					<h3 slot="heading" style="color: #111">Flight Software Team Lead</h3>
+					<h2 slot="heading" style="color: #111">Flight Software Team Lead</h2>
 					<div slot="text">
 						<span class="skill">C++</span>
 						<span class="skill">F Prime</span>

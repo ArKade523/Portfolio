@@ -1,23 +1,39 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import VanillaTilt from 'vanilla-tilt';
     
+    export let href: string = '#work';
+    export let target: string = '';
+    
+    let card: HTMLElement;
+
+    onMount(() => {
+        VanillaTilt.init(card, {
+            max: 12,
+            speed: 500,
+            glare: true,
+            'max-glare': 0.2,
+        });
+    });
 </script>
-  
-<div class="{$$props.class} card" style={$$props.style}>
-    <div class="card-image">
-        <slot name="image"></slot> <!-- Image Slot -->
+
+<a href={href} target={target} rel="noopener noreferrer">
+    <div class="{$$props.class} card" style={$$props.style} bind:this={card}>
+        <div class="card-image">
+            <slot name="image"></slot> <!-- Image Slot -->
+        </div>
+        <div class="card-text">
+            <slot name="date"><span class="date">Summer 2023</span></slot> <!-- Date Slot -->
+            <slot name="heading"><h3>Software Engineering Internship</h3></slot> <!-- Heading Slot -->
+            <slot name="text"><p></p></slot> <!-- Text Slot -->
+        </div>
+        <div class="card-stats">
+            <slot name="stat1"></slot> <!-- Stat 1 Slot -->
+            <slot name="stat2"></slot> <!-- Stat 2 Slot -->
+            <slot name="stat3"></slot> <!-- Stat 3 Slot -->
+        </div>
     </div>
-    <div class="card-text">
-        <slot name="date"><span class="date">Summer 2023</span></slot> <!-- Date Slot -->
-        <slot name="heading"><h3>Software Engineering Internship</h3></slot> <!-- Heading Slot -->
-        <slot name="text"><p></p></slot> <!-- Text Slot -->
-    </div>
-    <div class="card-stats">
-        <slot name="stat1"></slot> <!-- Stat 1 Slot -->
-        <slot name="stat2"></slot> <!-- Stat 2 Slot -->
-        <slot name="stat3"></slot> <!-- Stat 3 Slot -->
-    </div>
-</div>
+</a>
   
 <style>
     .card {
@@ -87,6 +103,10 @@
     .border {
         border-left: 1px solid #fff;
         border-right: 1px solid #fff;
+    }
+
+    a:hover {
+        text-decoration: none;
     }
 
     /* Mobile view */
