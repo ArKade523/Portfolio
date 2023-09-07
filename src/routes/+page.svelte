@@ -49,9 +49,9 @@
 						<br />
 						I'm currently the <b>Flight Software Team Lead</b> for the 
 						<b><a href='https://www.usu.edu/physics/gas/projects/gasrats' target="_blank">
-						GASRATS</a></b> cubesat in development at USU, which I use the 
+						GASRATS</a></b> cubesat in development at USU, where I use the 
 						<b><a href="https://nasa.github.io/fprime/" target="_blank">F Prime</a></b> 
-						framework to develop.
+						framework.
 						<br />
 						<br />
 						When I'm not at school or work, I enjoy rock climbing,
