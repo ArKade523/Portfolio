@@ -161,6 +161,7 @@
 		top: 0;
 		left: 0;
 		z-index: 1;
+		width: 100%;
 	}
 	
 	h1 {
@@ -306,12 +307,10 @@
 		}
 
 		.content-grid {
-			grid-template-columns: 1fr;
-			grid-template-rows: 1fr;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
 			align-items: center;
-			justify-content: center;	
-			width: 100vw;
-			margin-left: 1.2rem;
 		}
 
 		.gas {
