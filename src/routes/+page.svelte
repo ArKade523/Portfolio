@@ -157,11 +157,9 @@
 	}
 
 	.content {
-		position: absolute;
+		position: relative;
 		top: 0;
 		left: 0;
-		height: 100%;
-		width: 100%;
 		z-index: 1;
 	}
 	
@@ -267,6 +265,15 @@
 		margin: 0.5rem;
 	}
 
+	/* Tablet view */
+	@media only screen and (max-width: 1024px) {
+		.content-grid {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr;
+		}
+
+	}
+
 	/* Mobile view */
 	@media only screen and (max-width: 768px) {
 		section {
@@ -300,7 +307,7 @@
 
 		.content-grid {
 			grid-template-columns: 1fr;
-			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-rows: 1fr;
 			align-items: center;
 			justify-content: center;	
 			width: 100vw;
