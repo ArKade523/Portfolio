@@ -17,8 +17,8 @@
     });
 </script>
 
-<div class="{$$props.class} card" style={$$props.style} bind:this={card}>
-    <a href={href} target={target} rel="noopener noreferrer">
+<a href={href} target={target} rel="noopener noreferrer">
+    <div class="{$$props.class} card" style={$$props.style} bind:this={card}>
         <div class="card-image">
             <slot name="image"></slot> <!-- Image Slot -->
         </div>
@@ -32,8 +32,8 @@
             <slot name="stat2"></slot> <!-- Stat 2 Slot -->
             <slot name="stat3"></slot> <!-- Stat 3 Slot -->
         </div>
-    </a>
-</div>
+    </div>
+</a>
   
 <style>
     .card {
