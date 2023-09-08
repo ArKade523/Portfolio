@@ -79,7 +79,7 @@
 						<span class="skill">F Prime</span>
 					</div>
 					<Stat slot="stat1">
-						<div slot="value" class="stat-value">Pasadena</div>
+						<div slot="value" class="stat-value">Pasadena, CA</div>
 						<div slot="type" class="stat-type">Location</div>
 					</Stat>
 					<Stat slot="stat2">
@@ -247,7 +247,7 @@
 	}
 
 	.stat-value {
-		font-size: 0.8rem;
+		font-size: 0.7rem;
 	}
 
 	.stat-type {
