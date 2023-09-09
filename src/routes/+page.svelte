@@ -162,7 +162,7 @@
 		height: auto;
 		max-width: 100vw;
 		width: 100%;
-		position: sticky;
+		position: relative;
 	}
 
 	.app-container {
@@ -185,8 +185,6 @@
 		margin-bottom: 0;
 		font-family: var(--font-mono);
 		text-align: left;
-		position: sticky;
-		top: 0;
 		z-index: 2;
 	}
 
