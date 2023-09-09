@@ -11,6 +11,7 @@
 	--primary: #2c5985;
 	--secondary: #38516E;
 	--accent: #ffb26e;
+	--green-highlight: #5fcf91;
 	font-family: var(--font-body);
 	color: var(--color-text);
 }

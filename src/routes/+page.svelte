@@ -70,7 +70,7 @@
 				<h1>Work Experience</h1>
 			</div>
 			<div class="content-grid">
-				<Card class="card" href="https://www.jpl.nasa.gov/missions/cadre", target="_blank">
+				<Card class="card">
 					<img slot="image" class="card-image" src={nasa} alt="NASA Logo" />
 					<span slot="date" style="color:#444; font-size: 1rem;">Summer 2023</span>
 					<h2 slot="heading" style="color: #111">Software Engineering Internship</h2>
@@ -83,13 +83,18 @@
 						<div slot="type" class="stat-type">Location</div>
 					</Stat>
 					<Stat slot="stat2">
-						<div slot="value" class="stat-value">CADRE</div>
+						<div slot="value" class="stat-value"><a href="https://www.jpl.nasa.gov/missions/cadre">CADRE</a></div>
 						<div slot="type" class="stat-type">Mission</div>
 					</Stat>
 					<Stat slot="stat3">
 						<div slot="value" class="stat-value">NASA-JPL</div>
 						<div slot="type" class="stat-type">Employer</div>
 					</Stat>
+
+					<p slot="back-text" class="card-back-text">
+						Worked on the <a href="https://www.jpl.nasa.gov/missions/cadre">CADRE</a> mission
+						developing flight software using the <a href="https://nasa.github.io/fprime/">F Prime</a> framework.
+					</p>
 					
 				</Card>
 				<Card class="card">
@@ -112,6 +117,11 @@
 						<div slot="value" class="stat-value">USU</div>
 						<div slot="type" class="stat-type">Employer</div>
 					</Stat>
+
+					<p slot="back-text" class="card-back-text">
+						Provide IT support for the Math Department at USU.
+						Designed the <a href="https://math.usu.edu">Math Department Website</a>.
+					</p>
 					
 				</Card>
 				<Card class="card">
@@ -134,6 +144,11 @@
 						<div slot="value" class="stat-value">USU GAS</div>
 						<div slot="type" class="stat-type">Team</div>
 					</Stat>
+
+					<p slot="back-text" class="card-back-text">
+						Lead the Flight Software team for the <a href="https://www.usu.edu/physics/gas/projects/gasrats">GASRATS</a> cubesat.
+						Developed using the <a href="https://nasa.github.io/fprime/" style="white-space: nowrap;">F Prime</a> framework.
+					</p>
 					
 				</Card>
 			</div>
@@ -249,6 +264,7 @@
 
 	.stat-value {
 		font-size: 0.7rem;
+		white-space: nowrap;
 	}
 
 	.stat-type {
@@ -258,12 +274,23 @@
 	}
 
 	.skill {
-		background: #44dd88;
+		background: var(--green-highlight);
 		font-size: 0.8rem;
 		color: #fff;
 		padding: 0.5rem;
 		border-radius: 2rem;
 		margin: 0.5rem;
+	}
+
+	p.card-back-text {
+		font-size: 1rem;
+		color: #111;
+
+	}
+
+	p.card-back-text > a {
+		color: var(--accent);
+		text-decoration: underline;
 	}
 
 	/* Tablet view */
