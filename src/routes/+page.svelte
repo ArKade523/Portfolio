@@ -38,7 +38,7 @@
 				<h1>About Me</h1>
 			</div>
 			<div class="content-grid">
-				<div class="info-text">
+				<div class="body-text">
 					<p>
 						I'm a Computer Engineering student at Utah State University
 						set to graduate in 2025. I like the rapid design element to
@@ -177,7 +177,7 @@
 		top: 50vh;
 	}
 	
-	.info-text {
+	.body-text {
 		grid-column-start: 2;
 		grid-column-end: 4;
 	}
@@ -190,7 +190,7 @@
 	/* Mobile view */
 	@media only screen and (max-width: 768px) {
 
-		.info-text {
+		.body-text {
 			grid-column-start: 1;
 			padding: 0 0.5rem;
 		}
