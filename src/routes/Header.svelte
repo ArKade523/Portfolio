@@ -8,20 +8,20 @@
 	<nav class="desktop-nav" class:hidden={showMenu}>
 		<a href='/#home'>Home</a>
 		<span>	|</span>
-		<a href='/#about'>About Me</a>
+		<a href='{base}/#about'>About Me</a>
 		<span>	|</span>
-		<a href='/#work'>Work Experience</a>
+		<a href='{base}/#work'>Work Experience</a>
 		<span>	|</span>
-		<a href='/projects'>Projects</a>
+		<a href='{base}/projects'>Projects</a>
 	</nav>
 	<button class="hamburger-button" aria-label="Hamburger Menu" on:click={() => showMenu = !showMenu}>
 		<i class={`fas ${showMenu ? 'fa-times rotate-x' : 'fa-bars rotate-bars'}`}></i>
 	</button>
 	<nav class={`mobile-nav ${showMenu ? 'show-nav' : 'hidden'}`} >
-		<a href='/#home' on:click={() => showMenu = !showMenu}>Home</a>
-		<a href='/#about' on:click={() => showMenu = !showMenu}>About Me</a>
-		<a href='/#work' on:click={() => showMenu = !showMenu}>Work Experience</a>
-		<a href='/projects' on:click={() => showMenu = !showMenu}>Projects</a>
+		<a href='{base}/#home' on:click={() => showMenu = !showMenu}>Home</a>
+		<a href='{base}/#about' on:click={() => showMenu = !showMenu}>About Me</a>
+		<a href='{base}/#work' on:click={() => showMenu = !showMenu}>Work Experience</a>
+		<a href='{base}/projects' on:click={() => showMenu = !showMenu}>Projects</a>
 	</nav>
 </header>
 
