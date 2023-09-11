@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Card from './components/Card.svelte';
-	import StarBackground from './components/StarBackground.svelte';
-	import Stat from './components/Stat.svelte';
-	import Typewriter from './components/Typewriter.svelte';
+	import Card from '../lib/components/Card.svelte';
+	import StarBackground from '../lib/components/StarBackground.svelte';
+	import Stat from '../lib/components/Stat.svelte';
+	import Typewriter from '../lib/components/Typewriter.svelte';
 
 	const texts: string[] = ["Welcome to my website!",
 							"I'm a Software Engineer",
@@ -17,14 +17,13 @@
 
 <svelte:head>
 	<title>Kade Angell</title>
-	<meta name="description" content="Kade Angell's Web Portfolio" />
+	<meta name="description" content="Home | Kade Angell's Web Portfolio" />
 </svelte:head>
 
 <section id="home">
 	<div class="app-container">
-		<StarBackground />
 		<div class="content">
-			<div class="main-text">
+			<div class="title-text">
 				<h1>Hey, I'm <span>Kade</span>!</h1>
 				<Typewriter toRotate={texts}/>
 
@@ -35,7 +34,7 @@
 <section id="about">
 	<div class="app-container">
 		<div class="content">
-			<div class="main-text">
+			<div class="title-text">
 				<h1>About Me</h1>
 			</div>
 			<div class="content-grid">
@@ -66,7 +65,7 @@
 <section id="work">
 	<div class="app-container">
 		<div class="content">
-			<div class="main-text">
+			<div class="title-text">
 				<h1>Work Experience</h1>
 			</div>
 			<div class="content-grid">
@@ -75,20 +74,20 @@
 					<span slot="date" style="color:#444; font-size: 1rem;">Summer 2023</span>
 					<h2 slot="heading" style="color: #111">Software Engineering Internship</h2>
 					<div slot="text">
-						<span class="skill">C++</span>
-						<span class="skill">F Prime</span>
+						<span class="card-skill">C++</span>
+						<span class="card-skill">F Prime</span>
 					</div>
 					<Stat slot="stat1">
-						<div slot="value" class="stat-value">Pasadena, CA</div>
-						<div slot="type" class="stat-type">Location</div>
+						<div slot="value" class="card-stat-value">Pasadena, CA</div>
+						<div slot="type" class="card-stat-type">Location</div>
 					</Stat>
 					<Stat slot="stat2">
-						<div slot="value" class="stat-value"><a href="https://www.jpl.nasa.gov/missions/cadre">CADRE</a></div>
-						<div slot="type" class="stat-type">Mission</div>
+						<div slot="value" class="card-stat-value"><a href="https://www.jpl.nasa.gov/missions/cadre" target="_blank">CADRE</a></div>
+						<div slot="type" class="card-stat-type">Mission</div>
 					</Stat>
 					<Stat slot="stat3">
-						<div slot="value" class="stat-value">NASA-JPL</div>
-						<div slot="type" class="stat-type">Employer</div>
+						<div slot="value" class="card-stat-value">NASA-JPL</div>
+						<div slot="type" class="card-stat-type">Employer</div>
 					</Stat>
 
 					<p slot="back-text" class="card-back-text">
@@ -102,20 +101,20 @@
 					<span slot="date" style="color:#444; font-size: 1rem;">February 2022 - Present</span>
 					<h2 slot="heading" style="color: #111">IT Administrator</h2>
 					<div slot="text">
-						<span class="skill">Servers</span>
-						<span class="skill">Web Design</span>
+						<span class="card-skill">Servers</span>
+						<span class="card-skill">Web Design</span>
 					</div>
 					<Stat slot="stat1">
-						<div slot="value" class="stat-value">Logan, UT</div>
-						<div slot="type" class="stat-type">Location</div>
+						<div slot="value" class="card-stat-value">Logan, UT</div>
+						<div slot="type" class="card-stat-type">Location</div>
 					</Stat>
 					<Stat slot="stat2">
-						<div slot="value" class="stat-value">Math</div>
-						<div slot="type" class="stat-type">Department</div>
+						<div slot="value" class="card-stat-value">Math</div>
+						<div slot="type" class="card-stat-type">Department</div>
 					</Stat>
 					<Stat slot="stat3">
-						<div slot="value" class="stat-value">USU</div>
-						<div slot="type" class="stat-type">Employer</div>
+						<div slot="value" class="card-stat-value">USU</div>
+						<div slot="type" class="card-stat-type">Employer</div>
 					</Stat>
 
 					<p slot="back-text" class="card-back-text">
@@ -129,20 +128,20 @@
 					<span slot="date" style="color:#444; font-size: 1rem;">January 2023 - Present</span>
 					<h2 slot="heading" style="color: #111">Flight Software Team Lead</h2>
 					<div slot="text">
-						<span class="skill">C++</span>
-						<span class="skill">F Prime</span>
+						<span class="card-skill">C++</span>
+						<span class="card-skill">F Prime</span>
 					</div>
 					<Stat slot="stat1">
-						<div slot="value" class="stat-value">Logan, UT</div>
-						<div slot="type" class="stat-type">Location</div>
+						<div slot="value" class="card-stat-value">Logan, UT</div>
+						<div slot="type" class="card-stat-type">Location</div>
 					</Stat>
 					<Stat slot="stat2">
-						<div slot="value" class="stat-value">GASRATS</div>
-						<div slot="type" class="stat-type">Mission</div>
+						<div slot="value" class="card-stat-value">GASRATS</div>
+						<div slot="type" class="card-stat-type">Mission</div>
 					</Stat>
 					<Stat slot="stat3">
-						<div slot="value" class="stat-value">USU GAS</div>
-						<div slot="type" class="stat-type">Team</div>
+						<div slot="value" class="card-stat-value">USU GAS</div>
+						<div slot="type" class="card-stat-type">Team</div>
 					</Stat>
 
 					<p slot="back-text" class="card-back-text">
@@ -157,37 +156,6 @@
 </section>
 
 <style>
-	section {
-		min-height: 100vh;
-		height: auto;
-		max-width: 100vw;
-		width: 100%;
-		position: relative;
-	}
-
-	.app-container {
-		position: relative;
-		width: 100%;
-		height: 100%;
-	}
-
-	.content {
-		position: relative;
-		top: 0;
-		left: 0;
-		z-index: 1;
-		width: 100%;
-	}
-	
-	h1 {
-		font-size: 4rem;
-		color: #fff;
-		margin-bottom: 0;
-		font-family: var(--font-mono);
-		text-align: left;
-		z-index: 2;
-	}
-
 	h1 span {
 		background: linear-gradient(120deg, var(--accent), var(--color-text), var(--accent));
 		background-clip: text;
@@ -201,49 +169,12 @@
 		background-position: 100% 0;
 	}
 
-	.main-text {
-		margin-top: 0;
-		position: relative;
-		top: 6rem;
-		left: 0vw;
-		width: 40rem;
-		transform: translate(0%, -50%);
-		font-size: 4rem;
-		font-weight: 700;
-		color: #fff;
-		margin-left: 2rem;
+	h2 {
+		font-size: 1rem;
 	}
 
-	#home > .app-container > .content > .main-text {
+	#home > .app-container > .content > .title-text {
 		top: 50vh;
-	}
-
-	p {
-		font-size: 1.5rem;
-		color: #fff;
-		margin-bottom: 0;
-		font-family: var(--font-mono);
-		text-align: left;
-		padding: 1rem;
-	}
-
-	p > b {
-		color: var(--accent);
-	}
-
-	p > b > a {
-		color: var(--accent);
-		text-decoration: underline;
-	}
-
-	p > b > a:hover {
-		text-decoration: none;
-	}
-
-	.content-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr;
 	}
 	
 	.info-text {
@@ -251,91 +182,17 @@
 		grid-column-end: 4;
 	}
 
-	.card-image {
-		width: 100%;
-		height: auto;
-	}
-
-	.gas {
-		margin-top: 60px;
-	}
-
-	.stat-value {
-		font-size: 0.7rem;
-		white-space: nowrap;
-	}
-
-	.stat-type {
-		font-size: 0.5rem;
-		text-transform:uppercase; 
-		font-weight: bold;
-	}
-
-	.skill {
-		background: var(--green-highlight);
-		font-size: 0.8rem;
-		color: #fff;
-		padding: 0.5rem;
-		border-radius: 2rem;
-		margin: 0.5rem;
-	}
-
-	p.card-back-text {
-		font-size: 1rem;
-		color: #111;
-
-	}
-
-	p.card-back-text > a {
-		color: var(--accent);
-		text-decoration: underline;
-	}
-
 	/* Tablet view */
 	@media only screen and (max-width: 1024px) {
-		.content-grid {
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr;
-		}
 
 	}
 
 	/* Mobile view */
 	@media only screen and (max-width: 768px) {
-		section {
-			min-height: 100vh;
-			height: auto;
-			padding: 1rem;
-		}
-
-		h1 {
-			font-size: 2rem;
-		}
-
-		.main-text {
-			font-size: 1.5rem;
-			width: auto;
-			padding: 0 1rem;
-			margin-left: 0;
-			top: 3rem;
-		}
-
-		p {
-			max-width: 80vw;
-			font-size: 1.2rem;
-			padding: 0.5rem;
-		}
 
 		.info-text {
 			grid-column-start: 1;
 			padding: 0 0.5rem;
-		}
-
-		.content-grid {
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-			align-items: center;
 		}
 
 		.gas {

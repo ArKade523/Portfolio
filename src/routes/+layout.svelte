@@ -1,6 +1,8 @@
 <script>
 	import Header from './Header.svelte';
-	import './styles.css';
+	import StarBackground from '../lib/components/StarBackground.svelte';
+	import './general-styles.css';
+	import './card-styles.css';
 </script>
 
 <div class="app">
@@ -8,6 +10,7 @@
 		<Header />
 		
 		<main>
+			<StarBackground />
 			<slot />
 		</main>
 

@@ -147,7 +147,7 @@
 
     button {
         background: var(--green-highlight);
-        color: white;
+        color: var(--green-highlight-text);
         border: none;
         border-radius: 2rem;
         padding: 10px;
