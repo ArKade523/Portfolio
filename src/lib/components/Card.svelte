@@ -5,6 +5,8 @@
     let card: HTMLElement;
     let flip: boolean = false;
 
+    export let width: number = 300;
+
     const flipCard = () => {
         flip = !flip;
         card.classList.toggle('flipped');
@@ -20,9 +22,9 @@
     });
 </script>
 
-<div class="{$$props.class} card" style={$$props.style} bind:this={card}>
+<div class="{$$props.class} card" style={`width: ${width}px; ${$$props.style}`} bind:this={card}>
     <div class="card-inner">
-        <div class="card-front">
+        <div class="card-front" style={`grid-template-columns: ${width}px`}>
             <div class="card-image">
                 <slot name="image"></slot> <!-- Image Slot -->
             </div>
@@ -41,7 +43,7 @@
             </div>
         </div>  
         <div class="card-back">
-            <div class="card-image">
+            <div class="card-image" style={`grid-template-columns: ${width}px`}>
                 <slot name="image" class="image-back"></slot>
             </div>
             <div class="card-text">
@@ -63,7 +65,7 @@
 <style>
     .card {
         display: block;
-        width: 300px;
+        /* width: width variable;  <-- Width is assigned as a prop*/
         margin: auto;
         margin-top: 4rem;
 
@@ -88,7 +90,7 @@
 
     .card-front {
         display: grid;
-        grid-template-columns: 300px;
+        /* grid-template-columns: 300px; <-- assigned as a prop*/
         grid-template-rows: 210px 210px 50px 60px;
         grid-template-areas: "image" "text" "stats";
         background: white;
@@ -97,7 +99,7 @@
 
     .card-back {
         display: grid;
-        grid-template-columns: 300px;
+        /* grid-template-columns: 300px; <-- assigned as a prop */
         grid-template-rows: 210PX 210px 50px 60px;
 
         background: white;

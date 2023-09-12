@@ -1,6 +1,6 @@
 <script>
 	import Header from './Header.svelte';
-	import StarBackground from '../lib/components/StarBackground.svelte';
+	import StarBackground from '$lib/components/StarBackground.svelte';
 	import './general-styles.css';
 	import './card-styles.css';
 </script>

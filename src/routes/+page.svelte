@@ -1,8 +1,7 @@
 <script lang="ts">
-	import Card from '../lib/components/Card.svelte';
-	import StarBackground from '../lib/components/StarBackground.svelte';
-	import Stat from '../lib/components/Stat.svelte';
-	import Typewriter from '../lib/components/Typewriter.svelte';
+	import Card from '$lib/components/Card.svelte';
+	import Stat from '$lib/components/Stat.svelte';
+	import Typewriter from '$lib/components/Typewriter.svelte';
 
 	const texts: string[] = ["Welcome to my website!",
 							"I'm a Software Engineer",
