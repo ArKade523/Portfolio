@@ -1,6 +1,7 @@
 <script>
 	import Header from './Header.svelte';
 	import StarBackground from '$lib/components/StarBackground.svelte';
+	import Footer from './Footer.svelte';
 	import './general-styles.css';
 	import './card-styles.css';
 </script>
@@ -15,7 +16,7 @@
 		</main>
 
 		<footer>
-			<p></p>
+			<Footer />
 		</footer>
 	</div>
 </div>

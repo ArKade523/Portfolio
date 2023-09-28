@@ -35,7 +35,7 @@
                 </div>
                 <div class="body-text">
                     <p>
-                    This page is still in development. Please check back later!
+                        This page is still in development. Please check back later!
                     </p>
 
                     <!-- <Card class="card" width={cardWidth}>
@@ -72,21 +72,9 @@
 </section>
 
 <style>
-    .body-text {
-        grid-column-start: 2;
-        grid-column-end: 4;
-        margin-top: 5.5rem;
-    }
-
-    .card-image {
+    /* .card-image {
         width: 50% !important;
         height: auto !important;
-    }
+    } */
 
-    .fixed {
-        position: fixed;
-        top: 4rem;
-        left: 0;
-        width: 100%;
-    }
 </style>
