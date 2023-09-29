@@ -144,7 +144,7 @@
 					</Stat>
 
 					<p slot="back-text" class="card-back-text">
-						Lead the Flight Software team for the <a href="https://www.usu.edu/physics/gas/projects/gasrats">GASRATS</a> cubesat.
+						Led the Flight Software team for the <a href="https://www.usu.edu/physics/gas/projects/gasrats">GASRATS</a> cubesat.
 						Developed using the <a href="https://nasa.github.io/fprime/" style="white-space: nowrap;">F Prime</a> framework.
 					</p>
 					
