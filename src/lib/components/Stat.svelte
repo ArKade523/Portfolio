@@ -1,6 +1,6 @@
 <div class="{$$props.class} stat" style={$$props.style}>
-    <slot name="value"></slot> <!-- Value Slot -->
     <slot name="type" class="type"></slot> <!-- Type Slot -->
+    <slot name="value"></slot> <!-- Value Slot -->
 </div>
 
 <style>

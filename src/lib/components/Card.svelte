@@ -22,11 +22,11 @@
     });
 </script>
 
-<div class="{$$props.class} card" style={`width: ${width}px; ${$$props.style}`} bind:this={card}>
+<div class="{$$props.class} card" style={`width: ${width}px; ${$$props.style}`} bind:this={card} on:click={flipCard} on:keypress={flipCard} role="button" tabindex="-1" title="Click to flip over">
     <div class="card-inner">
         <div class="card-front" style={`grid-template-columns: ${width}px`}>
             <div class="card-image">
-                <slot name="image"></slot> <!-- Image Slot -->
+                <slot name="image" class="image"></slot> <!-- Image Slot -->
             </div>
             <div class="card-text">
                 <slot name="date"><span class="date">Summer 2023</span></slot> <!-- Date Slot -->
@@ -68,6 +68,7 @@
         /* width: width variable;  <-- Width is assigned as a prop*/
         margin: auto;
         margin-top: 4rem;
+        cursor: pointer;
 
         height: calc(210px + 210px + 30px + 80px);
 
