@@ -10,8 +10,20 @@
     let originalHeight: string = 'calc(210px + 210px + 30px + 80px)';
 
     const calculateHeight = () => {
-        // Get the natural height of the content
-        return card.scrollHeight + 'px';
+        // Temporarily disable the transition to get the correct height
+        const transition = card.style.transition;
+        card.style.transition = '';
+
+        // Get the new height after the card content has changed
+        const newHeight = card.scrollHeight + 'px';
+
+        // Re-enable the transition
+        card.style.transition = transition;
+
+        // Trigger a reflow to make sure the transition will animate
+        card.offsetHeight;
+
+        return newHeight;
     };
 
     const applyHeight = (newHeight: string) => {
