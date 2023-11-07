@@ -2,24 +2,40 @@
     import Card from '$lib/components/Card.svelte';
     import Stat from '$lib/components/Stat.svelte';
 
+    import { writable } from 'svelte/store';
+
     import kash from '$lib/images/kash.png';
     import nds from '$lib/images/nds.png';
     import website from '$lib/images/website.png';
 	import { onMount } from 'svelte';
 
-    let cardWidth: number = 800;
+    let cardWidth = writable(800);
 
     onMount(() => {
-        const mobileMQ = window.matchMedia('(max-width: 768px)');
-        const tabletMQ = window.matchMedia('(max-width: 1024px)');
+        function checkWidth() {
+            const mobileMQ = window.matchMedia('(max-width: 768px)');
+            const tabletMQ = window.matchMedia('(max-width: 1024px)');
 
-        if (mobileMQ.matches) {
-            cardWidth = 300;
+            if (mobileMQ.matches) {
+                console.log("on Mobile");
+                cardWidth.set(300);
+            } else if (tabletMQ.matches) {
+                cardWidth.set(500);
+            } else {
+                cardWidth.set(800); // Default for larger screens
+            }
         }
 
-        if (tabletMQ.matches) {
-            cardWidth = 500;
-        }
+        // Run once on mount
+        checkWidth();
+
+        // Add listener for resize events
+        window.addEventListener('resize', checkWidth);
+
+        // Cleanup listener when component is unmounted
+        return () => {
+            window.removeEventListener('resize', checkWidth);
+        };
     });
 </script>
 
@@ -38,8 +54,8 @@
                 <div class="body-text">
 
                     <div class="project">
-                        <Card class="card" width={800}>
-                            <img slot="image" src={kash} alt="kash" />
+                        <Card class="card" width={$cardWidth}>
+                            <img class="card-image" slot="image" src={kash} alt="kash" />
                             <span slot="date" style="color:#444; font-size: 1rem;">Fall 2023</span>
                             <h2 slot="heading" style="color: #111">Custom Unix shell - kash</h2>
                             <div slot="text">
@@ -72,8 +88,8 @@
                         </Card>
                     </div>
                     <div class="project">
-                        <Card class="card" width={800}>
-                            <img slot="image" src={nds} alt="nintendo ds lite" style="max-height: 100%;"/>
+                        <Card class="card" width={$cardWidth}>
+                            <img class="card-image" slot="image" src={nds} alt="nintendo ds lite"/>
                             <span slot="date" style="color:#444; font-size: 1rem;">Spring 2023</span>
                             <h2 slot="heading" style="color: #111">Nintendo DS Game</h2>
                             <div slot="text">
@@ -104,8 +120,8 @@
                         </Card>
                     </div>
                     <div class="project">
-                        <Card class="card" width={800}>
-                            <img slot="image" src={website} alt="website homepage screenshot" style="max-height: 100%;"/>
+                        <Card class="card" width={$cardWidth}>
+                            <img class="card-image" slot="image" src={website} alt="website homepage screenshot"/>
                             <span slot="date" style="color:#444; font-size: 1rem;">Fall 2023</span>
                             <h2 slot="heading" style="color: #111">This Website</h2>
                             <div slot="text">
@@ -120,12 +136,12 @@
                                 <div slot="value" class="card-stat-value">Logan, UT</div>
                             </Stat>
                             <Stat slot="stat2">
-                                <div slot="type" class="card-stat-type">Favorite Part</div>
-                                <div slot="value" class="card-stat-value">The Typewriter effect</div>
+                                <div slot="type" class="card-stat-type"></div>
+                                <div slot="value" class="card-stat-value"></div>
                             </Stat>
                             <Stat slot="stat3">
                                 <div slot="type" class="card-stat-type">Reason</div>
-                                <div slot="value" class="card-stat-value">Dynamic Portfolio</div>
+                                <div slot="value" class="card-stat-value">Portfolio</div>
                             </Stat>
         
                             <p slot="back-text" class="card-back-text">
@@ -145,9 +161,11 @@
 </section>
 
 <style>
-    /* .card-image {
-        width: 50% !important;
-        height: auto !important;
-    } */
+    .card-image {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+    }
 
 </style>

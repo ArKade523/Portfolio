@@ -4,22 +4,61 @@
     
     let card: HTMLElement;
     let flip: boolean = false;
-
+    
     export let width: number = 300;
+
+    let originalHeight: string = 'calc(210px + 210px + 30px + 80px)';
+
+    const calculateHeight = () => {
+        // Get the natural height of the content
+        return card.scrollHeight + 'px';
+    };
+
+    const applyHeight = (newHeight: string) => {
+        card.style.height = newHeight;
+
+        // Force reflow to ensure transition plays
+        card.offsetHeight;
+    };
 
     const flipCard = () => {
         flip = !flip;
         card.classList.toggle('flipped');
-    }
+
+        if (flip) {
+            // If the card is flipped, calculate and apply the new height
+            requestAnimationFrame(() => {
+                const newHeight = calculateHeight();
+                applyHeight(newHeight);
+            });
+        } else {
+            // If the card is flipped back, revert to the original height or 'auto'
+            applyHeight(originalHeight || 'auto');
+        }
+    };
 
     onMount(() => {
-        // VanillaTilt.init(card, {
-        //     max: 12,
-        //     speed: 500,
-        //     glare: true,
-        //     'max-glare': 0.2,
-        // });
+        // Store the initial height if necessary, or just use 'auto'
+        originalHeight = card.offsetHeight + 'px';
+
+        // Apply the initial height
+        card.style.height = originalHeight || 'auto';
+
+        // Optional: Recalculate when the window resizes, in case it affects content
+        window.addEventListener('resize', () => {
+            // Only recalculate if the card is flipped
+            if (flip) {
+                card.style.height = calculateHeight();
+            }
+        });
+
+        // Cleanup the event listener when the component is destroyed
+        return () => {
+            window.removeEventListener('resize', calculateHeight);
+        };
     });
+
+ 
 </script>
 
 <div class="{$$props.class} card" style={`width: ${width}px; ${$$props.style}`} bind:this={card} on:click={flipCard} on:keypress={flipCard} role="button" tabindex="-1" title="Click to flip over">
@@ -101,7 +140,7 @@
     .card-back {
         display: grid;
         /* grid-template-columns: 300px; <-- assigned as a prop */
-        grid-template-rows: 210PX 210px 50px 60px;
+        grid-template-rows: 210px auto 50px 60px;
 
         background: white;
         border-radius: 18px;
@@ -113,6 +152,7 @@
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
         background-size: cover;
+        background-position: center;
     }
 
     .image-back {
