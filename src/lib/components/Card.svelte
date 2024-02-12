@@ -174,6 +174,7 @@
     .card-text {
         grid-area: "text";
         margin: 25px;
+        font-size: 0.75rem;
     }
 
     .card-text .date {
