@@ -53,7 +53,7 @@
 						<br />
 						<br />
 						When I'm not at school or work, I enjoy rock climbing,
-						reading, and watching TV with my girlfriend.
+						reading, and rock climbing with my girlfriend.
 					</p>
 				</div>
 
