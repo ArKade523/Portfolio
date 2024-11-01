@@ -11,6 +11,7 @@
 	import nasa from '$lib/images/nasa.png';
 	import usu from '$lib/images/usu.png';
 	import gas from '$lib/images/gas.png';
+	import beta from '$lib/images/beta.png';
 
 </script>
 
@@ -39,21 +40,21 @@
 			<div class="content-grid">
 				<div class="body-text">
 					<p>
-						I'm a Computer Engineering student at Utah State University
-						set to graduate in 2025. I like the rapid design element to
-						<b>web development</b> and the rigorous testing and validation
-						that comes along with <b>flight software development</b>.
+						I'm a Computer Science student at Utah State University
+						set to graduate in 2025. I've build several <b>full-stack web apps</b> because I like front-facing development and interacting directly with users. 
+            I also love <b>embedded software engineering</b>. Nothing compares to seeing a project that I've worked on leave my brain and enter the physical world.
+            This passion has translated into working directly on the flight software for cubesats, a lunar rover, and an electric airplane.
 						<br />
 						<br />
-						I'm currently the <b>Flight Software Team Lead</b> for the 
+						I'm used to be the <b>Flight Software Team Lead</b> for the 
 						<b><a href='https://www.usu.edu/physics/gas/projects/gasrats' target="_blank">
-						GASRATS</a></b> cubesat in development at USU, where I use the 
+						GASRATS</a></b> cubesat in development at USU, where I used the 
 						<b><a href="https://nasa.github.io/fprime/" target="_blank">F Prime</a></b> 
 						framework.
 						<br />
 						<br />
-						When I'm not at school or work, I enjoy rock climbing,
-						reading, and rock climbing with my girlfriend.
+						When I'm not at school or work, I'm probably messing around with a retro game console,
+						reading, or rock climbing with my girlfriend.
 					</p>
 				</div>
 
@@ -68,6 +69,33 @@
 				<h1>Work Experience</h1>
 			</div>
 			<div class="content-grid">
+				<Card class="card">
+					<img slot="image" class="card-image" src={beta} alt="BETA Logo" />
+					<span slot="date" style="color:#444; font-size: 1rem;">Summer 2024 - Present</span>
+					<h2 slot="heading" style="color: #111">Software Engineering Internship</h2>
+					<div slot="text">
+						<span class="card-skill">C</span>
+						<span class="card-skill">Python</span>
+						<span class="card-skill">MATLAB</span>
+					</div>
+					<Stat slot="stat1">
+						<div slot="value" class="card-stat-value">Raleigh, NC</div>
+						<div slot="type" class="card-stat-type">Location</div>
+					</Stat>
+					<Stat slot="stat2">
+						<div slot="value" class="card-stat-value"><a href="https://www.beta.team/aircraft/" target="_blank">ALIA</a></div>
+						<div slot="type" class="card-stat-type">Mission</div>
+					</Stat>
+					<Stat slot="stat3">
+						<div slot="value" class="card-stat-value">BETA Technologies</div>
+						<div slot="type" class="card-stat-type">Employer</div>
+					</Stat>
+
+					<p slot="back-text" class="card-back-text">
+						Worked on <a href="https://www.beta.team/aircraft/">ALIA</a>, automating testing procedures and writing production drivers.
+					</p>
+					
+				</Card>
 				<Card class="card">
 					<img slot="image" class="card-image" src={nasa} alt="NASA Logo" />
 					<span slot="date" style="color:#444; font-size: 1rem;">Summer 2023</span>
@@ -124,7 +152,7 @@
 				</Card>
 				<Card class="card">
 					<img slot="image" class="card-image gas" src={gas} alt="GAS Logo"/>
-					<span slot="date" style="color:#444; font-size: 1rem;">January 2023 - Present</span>
+					<span slot="date" style="color:#444; font-size: 1rem;">January 2023 - May 2024</span>
 					<h2 slot="heading" style="color: #111">Flight Software Team Lead</h2>
 					<div slot="text">
 						<span class="card-skill">C++</span>
