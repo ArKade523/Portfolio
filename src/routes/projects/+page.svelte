@@ -124,7 +124,7 @@
                             <img class="card-image" slot="image" src={website} alt="website homepage screenshot"/>
                             <span slot="date" style="color:#444; font-size: 1rem;">Fall 2023</span>
                             <h2 slot="heading" style="color: #111">This Website</h2>
-                            <div slot="text">
+                            <div slot="text" class="card-text">
                                 <span class="card-skill">HTML</span>
                                 <span class="card-skill">CSS</span>
                                 <span class="card-skill">TypeScript</span>
@@ -166,6 +166,10 @@
         max-height: 100%;
         width: auto;
         height: auto;
+    }
+
+    .card-text {
+        line-height: 2.5rem;
     }
 
 </style>

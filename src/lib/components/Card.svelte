@@ -172,8 +172,7 @@
     }
 
     .card-text {
-        grid-area: "text";
-        margin: 25px;
+        margin: 1rem 0.5rem;
         font-size: 0.75rem;
     }
 
@@ -256,5 +255,13 @@
         }
 
     }
+
+    /* Prefers reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .card, .card-back, .card-inner {
+            transition: none;
+        }
+    }
+
 </style>
   

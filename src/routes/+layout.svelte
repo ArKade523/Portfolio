@@ -5,6 +5,9 @@
 	import './general-styles.css';
 	import './card-styles.css';
 	import Logo from '$lib/images/Logo.svg';
+    import '$lib/styles/App.css'
+    import '$lib/styles/index.css'
+    import '$lib/styles/utils.css'
 </script>
 
 <svelte:head>
