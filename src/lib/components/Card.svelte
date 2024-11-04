@@ -85,7 +85,7 @@
                 <slot name="text"><p></p></slot> <!-- Text Slot -->
             </div>
             <div class="button-wrapper">
-                <button on:click={flipCard}>Flip Card</button>
+                <button>Flip Card</button>
             </div>
             <div class="card-stats">
                 <slot name="stat1"></slot> <!-- Stat 1 Slot -->
@@ -102,7 +102,7 @@
                 <slot name="back-text" class="back-text"><p>Test</p></slot>
             </div>
             <div class="button-wrapper">
-                <button on:click={flipCard}>Flip Card</button>
+                <button>Flip Card</button>
             </div>
             <div class="card-stats">
                 <slot name="stat1"></slot> <!-- Stat 1 Slot -->

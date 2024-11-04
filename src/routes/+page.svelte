@@ -4,8 +4,10 @@
 	import Typewriter from '$lib/components/Typewriter.svelte';
 
 	const texts: string[] = ["Welcome to my website!",
+                            "I founded Raydoc.",
 							"I'm a Software Engineer",
-							"I'm a Svelte enthusiast",
+							"I do full-stack and embedded development",
+                            "I built this with SvelteKit (4)",
 							"I interned with NASA-JPL"];
 
 	import nasa from '$lib/images/nasa.png';
@@ -42,15 +44,11 @@
 					<p>
 						I'm a Computer Science student at Utah State University
 						set to graduate in 2025. I've build several <b>full-stack web apps</b> because I like front-facing development and interacting directly with users. 
-            I also love <b>embedded software engineering</b>. Nothing compares to seeing a project that I've worked on leave my brain and enter the physical world.
-            This passion has translated into working directly on the flight software for cubesats, a lunar rover, and an electric airplane.
+                        I also love <b>embedded software engineering</b>. Nothing compares to seeing a project that I've worked on leave my brain and enter the physical world.
+                        This passion has translated into working directly on the flight software for cubesats, a lunar rover, and an electric airplane.
 						<br />
 						<br />
-						I'm used to be the <b>Flight Software Team Lead</b> for the 
-						<b><a href='https://www.usu.edu/physics/gas/projects/gasrats' target="_blank">
-						GASRATS</a></b> cubesat in development at USU, where I used the 
-						<b><a href="https://nasa.github.io/fprime/" target="_blank">F Prime</a></b> 
-						framework.
+                        I'm a Co-Founder of <a href="https://raydoc.dev">Raydoc</a>, where we're solving the problem of <b>technical documentation</b> for software engineering teams.
 						<br />
 						<br />
 						When I'm not at school or work, I'm probably messing around with a retro game console,
@@ -151,7 +149,7 @@
 					
 				</Card>
 				<Card class="card">
-					<img slot="image" class="card-image gas" src={gas} alt="GAS Logo"/>
+					<img slot="image" class="card-image width-100 height-auto" src={gas} alt="GAS Logo"/>
 					<span slot="date" style="color:#444; font-size: 1rem;">January 2023 - May 2024</span>
 					<h2 slot="heading" style="color: #111">Flight Software Team Lead</h2>
 					<div slot="text">

@@ -2,6 +2,11 @@
 
 </script>
 
+<svelte:head>
+	<title>Contact Me | Kade Angell</title>
+	<meta name="description" content="Contact Me | Kade Angell's Web Portfolio" />
+</svelte:head>
+
 <section id="contact-me">
     <div class="app-container">
         <div class="content">

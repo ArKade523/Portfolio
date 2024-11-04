@@ -2,8 +2,6 @@
 	import Header from './Header.svelte';
 	import StarBackground from '$lib/components/StarBackground.svelte';
 	import Footer from './Footer.svelte';
-	import './general-styles.css';
-	import './card-styles.css';
 	import Logo from '$lib/images/Logo.svg';
     import '$lib/styles/App.css'
     import '$lib/styles/index.css'

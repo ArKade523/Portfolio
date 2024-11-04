@@ -125,8 +125,7 @@
                             <span slot="date" style="color:#444; font-size: 1rem;">Fall 2023</span>
                             <h2 slot="heading" style="color: #111">This Website</h2>
                             <div slot="text" class="card-text">
-                                <span class="card-skill">HTML</span>
-                                <span class="card-skill">CSS</span>
+                                <span class="card-skill">Three.js</span>
                                 <span class="card-skill">TypeScript</span>
                                 <span class="card-skill">Svelte</span>
 
